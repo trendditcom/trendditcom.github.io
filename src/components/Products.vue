@@ -8,7 +8,7 @@
         </p>
       </div>
       <div class="mx-auto mt-16 max-w-4xl">
-        <div class="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-200">
+        <div class="rounded-2xl bg-white p-8 shadow-xs ring-1 ring-gray-200">
           <div class="flex items-start gap-4">
             <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600 text-white">
               <DocumentTextIcon class="h-6 w-6" />
