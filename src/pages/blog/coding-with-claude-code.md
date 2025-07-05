@@ -86,19 +86,19 @@ I save the following MCP server configuration in the `claude_desktop_config.json
 
 Then I start Claude Desktop and note the new MCP server tools.
 
-![Image](./../images/claude-desktop-puppeteer-mcp-tools.png)
+![Image](/images/blog/claude-desktop-puppeteer-mcp-tools.png)
 Now Teams can test the Puppeteer MCP tools by entering a prompt like this.
 
 
 
 It is very cool to see the MCP server take agent actions and spawn a browser, then take web browsing actions including form inputs, clicks, screen capture, to finally respond with the results the agent has seen.
 
-![Image](./../images/puppeteer-claude-desktop.png)
+![Image](/images/blog/puppeteer-claude-desktop.png)
 
 
 I also have Docker Desktop as part of my toolchain in case I want to run my Puppeteer tests more securely. Here it is showing a container spawned by Puppeteer MCP server to run the headless browser safely within a container.
 
-![Image](./../images/docker-desktop.png)
+![Image](/images/blog/docker-desktop.png)
 That's it. Practitioners are ready to add the Puppeteer MCP server to my Claude Code configuration.
 
 ## VS Code and Claude Code
@@ -108,12 +108,12 @@ The first app Practitioners are vibe coding will be called Trenddit. Teams can d
 My toolchain includes VC Code as the IDE. I use the VS Code Terminal for running Claude Code. I add a new folder `trenddit` to VS Code Explorer view. Then I initialize a git repository using the `git init` command in the VS Code Terminal. Finally I `touch .mcp.json` file in the project root. I copy the same JSON contents as used for Claude Desktop and save the file. Then I run `claude` in the VS Code Terminal and it asks me if I want to use the MCP server.
 
 
-![Image](./../images/vscode-mcp-json-config.png)
+![Image](/images/blog/vscode-mcp-json-config.png)
 
 Teams can now run a prompt within Claude Code to use Puppeteer for visual testing.
 
 
-![Image](./../images/vscode-claude-code-puppeteer.png)
+![Image](/images/blog/vscode-claude-code-puppeteer.png)
 
 
 ## Allowed Tools Setup
@@ -247,7 +247,7 @@ Update the plan (@plan.md) and evaluation guide (@guide.md) based on any new fea
 
 Here is the end result. This speeds up recommended workflows a fair bit.
 
-![Image](./../images/slash-commands.png)
+![Image](/images/blog/slash-commands.png)
 
 
 ---
@@ -401,19 +401,19 @@ Now Practitioners are ready to really start vibe coding. All I need to do is run
 
 The VS Code IDE and Claude Code integration within Terminal is working well. Teams can review generated project structure and code while Claude runs through its checklist from the plan.
 
-![Image](./../images/vibe-coding-trenddit.png)
+![Image](/images/blog/vibe-coding-trenddit.png)
 
 
 
 
 This adds a progress tracker to the `plan.md` file.
 
-![Image](./../images/plan-progress-tracker.png)
+![Image](/images/blog/plan-progress-tracker.png)
 
 
 
 
-![Image](./../images/first-release-ui.png)
+![Image](/images/blog/first-release-ui.png)
 
 
 
@@ -434,7 +434,7 @@ I open my Mac Terminal and run `npm run dev` command to try out the features by 
 Claude runs the Puppeteer tool and spawns Chrome for Testing with the Trenddit app.
 
 
-![Image](./../images/puppeteer-visual-test.png)
+![Image](/images/blog/puppeteer-visual-test.png)
 
 Claude identifies a set of issues and recommends to fix these as next step. I prompt to record this in the plan.
 
@@ -446,28 +446,28 @@ I also run `/init` command again to ensure `CLAUDE.md` is updated based on the l
 
 Next I ask Claude to fix the issues as per plan. Here is what a debugging session looks like.
 
-![Image](./../images/debug.png)
+![Image](/images/blog/debug.png)
 
 Finally I ask Claude to document a feature evaluation guide in the `README.md` file. I use this to manually evaluate the features built so far.
 
 
 
 Now I follow the evaluation guide and get to the feed page. Wow! This feeds page was built based on the few sentences of requirements I had shared earlier.
-![Image](./../images/trenddit-feed.png)
+![Image](/images/blog/trenddit-feed.png)
 
 
 I continue to browse the generated app. Here is the details page for the post when clicked.
 
-![Image](./../images/details.png)
+![Image](/images/blog/details.png)
 
 Here is the sign in screen. It works with test crendentials.
-![Image](./../images/signin.png)
+![Image](/images/blog/signin.png)
 Here is the sign out screen.
 
-![Image](./../images/signout.png)
+![Image](/images/blog/signout.png)
 And here is the invalid credentials screen.
 
-![Image](./../images/credentials.png)
+![Image](/images/blog/credentials.png)
 
 After a long debugging cycle the app features may have changed so I prompt Claude like so.
 
@@ -498,7 +498,7 @@ When manually evaluating the app in Chrome browser, I turn on Chrome Developer T
 
 Then it continues to build update its Todos list of errors to fix and attempts to fix these one by one.
 
-![Image](./../images/minified-react-error.png)
+![Image](/images/blog/minified-react-error.png)
 
 During debugging sessions the TDD workflow mentioned in memory file may not be followed so I always check if I need to commit changes, update evaluation guide, or plan.
 
@@ -542,7 +542,7 @@ Now I prompted Claude to think harder about solving for this plan.
 
 This resulted in following lines of code analysis.
 
-![Image](./../images/code-analysis.png)
+![Image](/images/blog/code-analysis.png)
 
 The analysis also revealed that certain tests are failing. This way code analysis is helping provide another layer of review on my codebase.
 
@@ -550,30 +550,30 @@ The analysis also revealed that certain tests are failing. This way code analysi
 
 I follow the evaluation guide and note that the settings screen is working. Teams can set a dark or light theme and the UI changes accordingly.
 
-![Image](./../images/settings.png)
+![Image](/images/blog/settings.png)
 
 The feed page has also gone through changes. There is a cool new grid layout.
 
-![Image](./../images/grid.png)
+![Image](/images/blog/grid.png)
 
 I also note the compact layout.
 
-![Image](./../images/conpact.png)
+![Image](/images/blog/conpact.png)
 I also notice a nicely laid out top menu. Love the clean simple UI. There are four drop downs. First one is user menu with accounts and preferences in context.
 
-![Image](./../images/user-menu.png)
+![Image](/images/blog/user-menu.png)
 
 Second one is accessibility menu. How thoughtful!
 
-![Image](./../images/accessibility-menu.png)
+![Image](/images/blog/accessibility-menu.png)
 
 Third one is Layout menu.
 
-![Image](./../images/layout-menu.png)
+![Image](/images/blog/layout-menu.png)
 
 Fourth one is theme menu.
 
-![Image](./../images/theme-menu.png)
+![Image](/images/blog/theme-menu.png)
 
 Practitioners are excited to continue vibe coding Trenddit so that the features evolve from high fidelity prototypes to actual integrations with Amazon Bedrock and feeds. My next prompt is the same.
 
@@ -586,7 +586,7 @@ Practitioners are excited to continue vibe coding Trenddit so that the features 
 
 As the project has progressed I have observed a persistent challenge. The feed sources feature is problematic. Practitioners are not being able to add a new feed source. My workaround to seed with feed sources did not help either. I have tried several ways to fix these issues including sending Claude screen grabs, making it `ultrathink` for more reasoning tokens, using subagents, and so on. Nothing seems to work.
 
-![Image](./../images/feed-issues.png)
+![Image](/images/blog/feed-issues.png)
 
 The lessons learnt in this chapter resulted in creating the Vibe Coding on Rails chapter. This is where the hindsights from each section were applied and resolved to refine the strategies used to vibe code effectively and efficiently.
 
