@@ -168,7 +168,7 @@ As I vibe code the first sprint, Practitioners are noticing Claude 4 + direct An
 
 Best practices involve note there are no "too many requests" errors during the first sprint. Practitioners are conscious, this is eating into my Claude subscription costs. More on that soon. 
 
-![Image](./../images/first-sprint-generation.png)
+![Image](/images/blog/first-sprint-generation.png)
 As I observe the Claude 4 code generation and agent behavior Practitioners are noting several interesting actions including identifying a fixing usual issues this stack leads to including configuration of various dependencies and build errors. I have never experienced one shot build success first time when using similar stack. The stack is complex.
 
 ---
@@ -596,7 +596,7 @@ Create or update the README.md of VibeSolver product. Review the existing README
 The result is pretty awesome. It is a README like most popular GitHub projects complete with project tags, menus, emojis, and more.
 
 
-![Image](./../images/vibesolver-on-github.png)
+![Image](/images/blog/vibesolver-on-github.png)
 
 ## First Feature Sprint
 
@@ -775,7 +775,7 @@ This sprint establishes VibeSolver as a functional AI-powered AWS Solutions Arch
 
 Here is what the first MVP sprint generation looks like. It moves fast! Way faster than 3.7 model. Native Anthropic API integration feels faster. Let me check if it is also better (no bugs, no too many requests errors) and cheaper (cost and time for sprint run).
 
-![Image](./../images/first-mvp-sprint.png)
+![Image](/images/blog/first-mvp-sprint.png)
 
 Here are the cost and vibe coding stats:
 
@@ -1583,19 +1583,19 @@ content.js:39 Web Memo content script initialized
 
 Here is the resulting UI. Seems without styling, layout, etc. Simple fix in my opinion. I captured a screenshot and shared with Claude.
 
-![Image](./../images/ui-minus-style.png)
+![Image](/images/blog/ui-minus-style.png)
 
 Next round of Claude Code error fixing generates this UI. I provide the UI (errors included) back to Claude for iterating a fix.
 
-![Image](./../images/ui-rendering-but-errors.png)
+![Image](/images/blog/ui-rendering-but-errors.png)
 
 Then I see magic! One round of error fixing and the MVP is feature complete.
 
-![Image](./../images/mvp-ui-first-sprint.png)
+![Image](/images/blog/mvp-ui-first-sprint.png)
 
 And when I add a user requirement to "Build scalable landing page for 10,000 users."
 
-![Image](./../images/mvp-solution-first-sprint.png)
+![Image](/images/blog/mvp-solution-first-sprint.png)
 
 This is pretty awesome. For the first time in my multiple attempts at vibe coding, Practitioners are able to generate a relatively feature complete app within two sprints. The UI design looks clean and unique. The generated app is mobile-web responsive. Running the app is really fast compared to other stacks. This will help during feature iterations. The code generated is significantly fewer lines of code around 3K compared with prior approaches which reached 11K by second sprint. The code quality score is maintained at 95/100. Code is fairly modular with 43 files of which 21 files are components.
 
@@ -1603,15 +1603,15 @@ This is pretty awesome. For the first time in my multiple attempts at vibe codin
 
 Here is what the production solution looks like.
 
-![Image](./../images/production-solution.png)
+![Image](/images/blog/production-solution.png)
 
 And the solution architecture to match.
 
-![Image](./../images/production-architecture.png)
+![Image](/images/blog/production-architecture.png)
 
 Teams can also run a what-if analysis on the solution like so...
 
-![Image](./../images/production-what-if.png)
+![Image](/images/blog/production-what-if.png)
 
 ---
 
@@ -1710,12 +1710,12 @@ By the sprint 10 Practitioners are building advanced features of VibeSolver incl
 
 Here is the solutions library feature which enables me to organize, search, and edit solutions I saved after generation.
 
-![Image](./../images/solutions-library.png)
+![Image](/images/blog/solutions-library.png)
 
 
 Practitioners are also able to export the solution as a PDF, PNG, or Terraform Infrastructure as Code file to import into my AWS Console.
 
-![Image](./../images/export-solution.png)
+![Image](/images/blog/export-solution.png)
 
 
 ## Conclusion

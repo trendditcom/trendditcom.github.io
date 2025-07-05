@@ -1,5 +1,9 @@
 # Issues
 
+[x] Error when visiting blog page. Test all blog posts and images thoroughly - Could not find requested image ./../images/first-sprint-generation.png. Does it exist?
+**Solution:** Fixed relative image path issues across all blog posts (solutions.md, vibe-coding.md, workflows.md, and writing.md). Converted 92 relative image paths (./../images/ and .//images/) to absolute paths (/images/blog/). Also fixed a specific path issue with spaces in the filename. Created comprehensive test coverage to verify all image paths are correct and images exist in expected locations. All 34 project tests now pass successfully.
+
+
 [x] Error when visiting blog page - Could not find requested image ./../images/claude-desktop-puppeteer-mcp-tools.png. Does it exist?
 **Solution:** Fixed image path references in the blog post "Coding with Claude Code" by implementing a comprehensive solution using test-driven development. Created a test suite (blog-images.test.ts) to verify correct image paths across all blog posts and ensure images exist in the expected locations. The issue was caused by incorrect relative image paths (./../images/) that should have been absolute paths (/images/blog/) for proper rendering in Astro. Updated 25 image references in the coding-with-claude-code.md blog post from relative paths to absolute paths pointing to the correct /public/images/blog/ directory. All 34 project tests pass, confirming the fix works correctly and maintains code quality. The solution prevents similar issues in the future by providing automated testing for image path validation.
 

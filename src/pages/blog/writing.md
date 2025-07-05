@@ -34,7 +34,7 @@ When automating workflows a great place to start is to emulate a tool or app tha
 
 I want to emulate this workflow while using my favorite desktop tools to keep my content on my laptop and control tool access based on my security posture. I also want to use Anthropic models instead of Google Gemini.
 
-![Image](./../images/notebooklm.png)
+![Image](/images/blog/notebooklm.png)
 
 The NotebookLM interface shown above exemplifies how modern AI-powered writing tools can intelligently analyze, organize, and generate content from various sources. Google's NotebookLM provides a clean, user-friendly interface that allows users to interact with documents through natural language, much like a conversation with a knowledgeable research assistant. The interface includes features for organizing sources, extracting key insights, and generating summaries—all capabilities I want to replicate in my own Vibe Writing workflow. By emulating this type of tool with my preferred models and desktop environment, Teams can achieve the same productivity benefits while maintaining control over my data and workflow preferences.
 
@@ -46,7 +46,7 @@ This approach to content privacy is particularly important in the age of LLM-ass
 
 I use Obsidian for managing my Markdown content. Teams can setup a new Obsidian vault in my Documents folder.
 
-![Image](./../images/create-obsidian-vault.png)
+![Image](/images/blog/create-obsidian-vault.png)
 
 The screenshot above shows the process of creating a new Obsidian vault, which will serve as the foundation for my Vibe Writing environment. Obsidian is particularly well-suited for this workflow because it treats notes as interconnected nodes in a knowledge graph rather than isolated documents. This approach to knowledge management aligns perfectly with how LLMs process and connect information. By creating a dedicated vault for my open content, I'm establishing a clear boundary between what can be shared with AI tools and what should remain private. This structured approach to content organization is essential when implementing a Vibe Writing workflow that respects privacy concerns while maximizing the benefits of AI assistance.
 
@@ -54,7 +54,7 @@ The screenshot above shows the process of creating a new Obsidian vault, which w
 
 Next I configure the filesystem MCP server to use the `obsidian-vault-open` folder.
 
-![Image](./../images/configure-mcp-filesystem.png)
+![Image](/images/blog/configure-mcp-filesystem.png)
 
 The configuration screen pictured above shows how I set up the filesystem MCP server to access my Obsidian vault. This critical step creates the bridge between Claude and my local files, enabling a seamless integration where the AI can read from and write to my content repository. Model Context Protocol (MCP) is revolutionizing how we interact with AI tools by providing "a standardized way to handle context interaction between AI models and development environments" [source: https://www.claudemcp.com/]. The protocol design is based on JSON-RPC 2.0, supporting bidirectional communication and rich context interaction, which is exactly what we need for a responsive Vibe Writing environment.
 
@@ -62,19 +62,19 @@ The Model Context Protocol (MCP) is a key component that enables seamless intera
 
 Now Claude Desktop can call the `filesystem` tool automatically as needed for running several file operations in a single conversation response completion which performing actions I have requested.
 
-![Image](./../images/summarize-transcript.png)
+![Image](/images/blog/summarize-transcript.png)
 
 The image above demonstrates how I'm using Claude with MCP to summarize a transcript. This is a perfect example of Vibe Writing in action - I'm providing Claude with a complex document and using natural language to request a specific transformation of that content. The integration allows Claude to directly access the file, process its contents, and generate a concise summary without requiring me to copy and paste large amounts of text or manage multiple applications. This streamlined workflow dramatically reduces the friction in content processing tasks that would traditionally require multiple steps and tools. 
 
 The result is a clean, crisp summary of a long transcript.
 
-![Image](./../images/vibe-writing-summaries.png)
+![Image](/images/blog/vibe-writing-summaries.png)
 
 As shown in the image above, the summarization process transforms lengthy, verbose transcripts into structured, concise summaries that capture the essential information. This is particularly valuable when processing meeting notes, interviews, or research materials where extracting the key points quickly is essential. The summarized content maintains the core ideas while eliminating unnecessary details, making it easier to review and incorporate into other documents. This capability transforms hours of content review into minutes of focused reading, demonstrating one of the most immediate productivity benefits of the Vibe Writing approach. The clean formatting and clear organization of the summary also showcases how LLMs can not only condense information but also improve its presentation and accessibility.
 
 The integration is straight forward and looks like this.
 
-![Image](./../images/claude-mcp-obsidian.png)
+![Image](/images/blog/claude-mcp-obsidian.png)
 
 The diagram above illustrates the integration between Claude, MCP, and Obsidian that powers my Vibe Writing workflow. This architecture creates a bidirectional flow of information where Claude can access my notes and writing in Obsidian through the MCP server, process or transform that content based on my requests, and then save the results back to my vault. This seamless connection between the AI assistant and my knowledge repository eliminates the context-switching and manual file handling that would otherwise interrupt my creative flow. The integration follows the principles of "tool-aware" AI described by platforms like Pica, which aim to give AI assistants direct access to various APIs through a unified interface [source: https://www.walturn.com/insights/claude-mcp-a-new-standard-for-ai-integration].
 
@@ -82,7 +82,7 @@ The diagram above illustrates the integration between Claude, MCP, and Obsidian 
 
 Now Teams can further enhance my writing workflow by adding web research to expand on current content. Teams can add the [Brave Search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search) MCP Server to perform the web search.
 
-![Image](./../images/brave-search-mcp-tools.png)
+![Image](/images/blog/brave-search-mcp-tools.png)
 
 The configuration screen shown above demonstrates how I integrate Brave Search capabilities into my Vibe Writing workflow through MCP. This integration allows Claude to perform web searches directly based on my research needs, pulling in relevant information from across the internet without requiring me to switch contexts or manually search and paste content. The Brave Search MCP Server is part of a growing ecosystem of specialized MCP servers that extend Claude's capabilities beyond its built-in knowledge. According to the Model Context Protocol community, there are over 100 specialized MCP servers available, covering everything from database connections to API integrations [source: https://mcpservers.org/]. This extensibility is what makes Vibe Writing with Claude so powerful - Teams can continuously add new capabilities as my needs evolve.
 
@@ -104,7 +104,7 @@ I review the resulting content and ask for one more revision before editing the 
 
 Here is the revised integration diagram with web search included.
 
-![Image](./../images/claude-mcp-obsidian-search.png)
+![Image](/images/blog/claude-mcp-obsidian-search.png)
 ## The Evolution of Vibe Writing
 
 Vibe Writing represents a fundamental shift in how we approach content creation. Just as Vibe Coding allows developers to "give in to the vibes" and let LLMs handle code generation, Vibe Writing enables a similar approach to content creation. However, unlike Vibe Coding, which might sometimes sacrifice comprehension for speed, Vibe Writing typically requires more human oversight to ensure the quality and accuracy of the content.
@@ -131,7 +131,7 @@ Anthropic has a solution similar and more powerful than Claude Desktop which can
 According to [AWS documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html), Amazon Bedrock doesn't store or log my prompts and completions. It doesn't use my prompts and completions to train any AWS models and doesn't distribute them to third parties.
 
 Once installed Teams can run Claude Code within my Obsidian Vault folder and it will restrict the file operations to that folder.
-![Image](./../images/claude-code.png)
+![Image](/images/blog/claude-code.png)
 While the user interface is the Terminal based Command Line Interface instead of a desktop app, Claude Code is more powerful than Claude Desktop as it can operate on both text content as well as code.
 
 To connect Claude Code to the MCP servers, Teams can simply import the servers configured for Claude Desktop with a single Terminal command like so.
@@ -144,11 +144,11 @@ This command gives me options to import only the MCP servers I need or all of th
 
 Teams can also run `/init` command once in the CLI shell (after running `claude` command) to create folder level rules or instructions for Claude. The LLM parses the content of the folder and automatically suggests really comprehensive rules. Teams can have such rules available within each unique folder of my project. So different rules for Vibe Writing and another set for Vibe Coding.
 
-![Image](./../images/claude-rules.png)
+![Image](/images/blog/claude-rules.png)
 
 The revised tools integration looks like this.
 
-![Image](./../images/bedrock-vibe-writing.png)
+![Image](/images/blog/bedrock-vibe-writing.png)
 
 As you will notice this integration is incremental to the one earlier with Claude Desktop. So Teams can use Claude Desktop to configure new MCP servers, prototype the usage with open content, before importing these servers to Claude Code and running these on my work content.
 
