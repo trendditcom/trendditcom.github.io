@@ -40,7 +40,7 @@ const buttonVariants = cva(
 )
 
 export interface ButtonProps {
-  variant?: 'default' | 'secondary' | 'destructive' | 'outline-solid' | 'ghost' | 'link'
+  variant?: 'default' | 'secondary' | 'destructive' | 'outline' | 'ghost' | 'link'
   size?: 'default' | 'sm' | 'lg' | 'icon'
   as?: string
 }

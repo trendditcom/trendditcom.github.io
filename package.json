@@ -8,7 +8,8 @@
     "preview": "astro preview",
     "test": "vitest",
     "test:ui": "vitest --ui",
-    "typecheck": "astro check && tsc --noEmit"
+    "typecheck": "astro check && tsc --noEmit",
+    "generate-blog": "tsx src/scripts/generate-blog-posts.ts"
   },
   "dependencies": {
     "@astrojs/vue": "^5.1.0",
@@ -32,6 +33,7 @@
     "jsdom": "^24.0.0",
     "postcss": "^8.4.0",
     "tailwindcss": "^4.1.11",
+    "tsx": "^4.7.0",
     "typescript": "^5.6.0",
     "vitest": "^2.1.0"
   }

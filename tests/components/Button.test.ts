@@ -34,4 +34,36 @@ describe('Button component', () => {
     })
     expect(wrapper.element.tagName).toBe('A')
   })
+
+  it('applies correct classes for primary button with proper styling', () => {
+    const wrapper = mount(Button, {
+      props: {
+        variant: 'default',
+        size: 'lg'
+      }
+    })
+    expect(wrapper.classes()).toEqual(expect.arrayContaining([
+      'bg-primary',
+      'text-primary-foreground',
+      'hover:bg-primary/90',
+      'h-11',
+      'px-8'
+    ]))
+  })
+
+  it('applies correct classes for outline button', () => {
+    const wrapper = mount(Button, {
+      props: {
+        variant: 'outline',
+        size: 'lg'
+      }
+    })
+    expect(wrapper.classes()).toEqual(expect.arrayContaining([
+      'border',
+      'border-input',
+      'bg-background',
+      'hover:bg-accent',
+      'hover:text-accent-foreground'
+    ]))
+  })
 })
