@@ -39,12 +39,14 @@ describe('Project Upgrades', () => {
   it('should have compatible Astro integrations', () => {
     // Check that Astro integrations are compatible with Astro 5.x
     expect(packageJson.dependencies['@astrojs/vue']).toBeDefined()
-    expect(packageJson.dependencies['@astrojs/tailwind']).toBeDefined()
     
     // Verify Vue integration is compatible
     const vueIntegrationVersion = packageJson.dependencies['@astrojs/vue'].replace(/[^0-9.]/g, '')
     const [vueIntegrationMajor] = vueIntegrationVersion.split('.').map(Number)
     expect(vueIntegrationMajor).toBeGreaterThanOrEqual(4)
+    
+    // Verify @astrojs/tailwind is NOT present (Tailwind v4 uses PostCSS directly)
+    expect(packageJson.dependencies['@astrojs/tailwind']).toBeUndefined()
   })
 
   it('should have required Tailwind CSS v4 packages', () => {
