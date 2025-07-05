@@ -16,7 +16,7 @@
             <div class="flex-1">
               <h3 class="text-2xl font-semibold">Trenddit Memo</h3>
               <p class="mt-2 text-gray-600">
-                An intelligent document processing and knowledge management system that helps teams organize, search, and leverage their collective knowledge using advanced AI capabilities.
+                A Chrome extension that transforms web browsing into intelligent knowledge management. Capture content from any webpage, organize with AI-powered tags, and chat with your saved knowledge using multiple AI providers like Claude, GPT, and Gemini.
               </p>
               <div class="mt-6 flex gap-4">
                 <Button as="a" href="https://github.com/trendditcom/trenddit-memo" target="_blank">
