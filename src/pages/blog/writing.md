@@ -1,9 +1,10 @@
 ---
+layout: '@layouts/BlogPost.astro'
 title: "Writing"
-description: "
-I mostly do my work in text and sometimes images. I write articles, posts, documents for work. I manage my to do lists as text outlines. I capture my meetin..."
+date: "2025-07-05"
 author: "Trenddit Team"
-publishedAt: "2025-07-05"
+excerpt: "Master vibe writing workflows using natural language prompts with LLMs to create, enhance, and organize text content."
+featuredImage: "/images/blog/vibe-writing-summaries.png"
 tags: ["ai", "automation", "development", "workflows", "productivity", "aws", "knowledge-management", "trenddit"]
 ---
 

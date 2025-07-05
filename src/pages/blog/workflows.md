@@ -1,9 +1,10 @@
 ---
+layout: '@layouts/BlogPost.astro'
 title: "Workflows"
-description: "
-In this chapter Practitioners are going to develop a more ambitiously featured project. While Teams can continue to follow the guidance from Rails of Vibe C..."
+date: "2025-07-05"
 author: "Trenddit Team"
-publishedAt: "2025-07-05"
+excerpt: "Explore advanced AI automation workflows and develop ambitiously featured projects using vibe coding strategies."
+featuredImage: "/images/blog/high-level-architecture.png"
 tags: ["ai", "automation", "development", "workflows", "productivity", "aws", "knowledge-management", "trenddit"]
 ---
 

@@ -1,8 +1,10 @@
 ---
+layout: '@layouts/BlogPost.astro'
 title: "Solutions"
-description: "By the time I start writing this chapter, Claud 4 is launched. Claude Code has also been updated to integrated directly with VS Code. In order to evaluate th..."
+date: "2025-07-05"
 author: "Trenddit Team"
-publishedAt: "2025-07-05"
+excerpt: "Leverage Claude 4 and VS Code integration to develop projects using product vision first and vibe-friendly technology stacks."
+featuredImage: "/images/blog/first-sprint-generation.png"
 tags: ["ai", "automation", "development", "workflows", "productivity", "aws", "knowledge-management", "trenddit"]
 ---
 

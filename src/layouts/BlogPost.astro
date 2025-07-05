@@ -2,45 +2,235 @@
 import Layout from './Layout.astro';
 import Header from '@components/Header.vue';
 import Footer from '@components/Footer.vue';
+import TableOfContents from '@components/TableOfContents.vue';
 
 export interface Props {
-  title: string;
-  date: string;
-  author?: string;
-  excerpt?: string;
+  frontmatter: {
+    title: string;
+    date?: string;
+    author?: string;
+    excerpt?: string;
+    featuredImage?: string;
+    layout: string;
+    tags?: string[];
+  };
 }
 
-const { title, date, author = 'Trenddit Team', excerpt } = Astro.props;
+const { frontmatter } = Astro.props;
+const { title, date, author = 'Trenddit Team', excerpt, featuredImage } = frontmatter;
 ---
 
 <Layout title={`${title} - Trenddit Blog`}>
   <Header client:load />
   <main class="min-h-screen">
-    <article class="container mx-auto px-4 py-16">
-      <div class="mx-auto max-w-3xl">
-        <header class="mb-8">
-          <h1 class="text-4xl font-bold mb-4">{title}</h1>
-          <div class="flex items-center gap-4 text-sm text-gray-600">
-            <time>{new Date(date).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric'
-            })}</time>
-            <span>•</span>
-            <span>{author}</span>
+    <article>
+      {featuredImage ? (
+        <!-- Apple-style Epic Hero Section -->
+        <div class="relative min-h-screen overflow-hidden bg-black">
+          <!-- Background Image with Parallax Effect -->
+          <div class="absolute inset-0 parallax-bg">
+            <img 
+              src={featuredImage} 
+              alt={title}
+              class="w-full h-full object-cover scale-110 animate-ken-burns"
+              style="filter: brightness(0.7) contrast(1.1) saturate(1.2);"
+            />
           </div>
-          {excerpt && <p class="mt-4 text-lg text-gray-600">{excerpt}</p>}
-        </header>
-        
-        <div class="prose prose-lg max-w-none">
-          <slot />
+          
+          <!-- Multi-layered Gradient Overlays for Depth -->
+          <div class="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-black/60"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-blue-900/20 via-transparent to-purple-900/20"></div>
+          
+          <!-- Animated Particles/Dots -->
+          <div class="absolute inset-0 opacity-30">
+            <div class="floating-particles"></div>
+          </div>
+          
+          <!-- Content Container with Glass Morphism -->
+          <div class="relative z-10 flex items-center justify-center min-h-screen px-4">
+            <div class="text-center max-w-6xl mx-auto">
+              <!-- Main Title with Epic Typography -->
+              <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-8 leading-tight animate-fade-in tracking-tight">
+                <span class="bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent drop-shadow-2xl">
+                  {title}
+                </span>
+              </h1>
+              
+              <!-- Glassmorphism Card for Meta Info -->
+              <div class="backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl p-6 mb-8 shadow-2xl animate-slide-up max-w-2xl mx-auto">
+                <div class="flex items-center justify-center gap-6 text-white/90 text-lg">
+                  <span class="flex items-center gap-2">
+                    <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    {author}
+                  </span>
+                  <div class="w-px h-6 bg-white/30"></div>
+                  <span class="text-white/70">AI Automation Insights</span>
+                </div>
+                
+                {excerpt && (
+                  <p class="mt-4 text-xl text-white/80 leading-relaxed font-light">
+                    {excerpt}
+                  </p>
+                )}
+              </div>
+              
+              <!-- Scroll Indicator -->
+              <div class="animate-bounce mt-16">
+                <div class="w-6 h-10 border-2 border-white/50 rounded-full mx-auto relative">
+                  <div class="w-1 h-3 bg-white/70 rounded-full absolute left-1/2 top-2 transform -translate-x-1/2 animate-pulse"></div>
+                </div>
+                <p class="text-white/60 text-sm mt-2 font-light">Scroll to explore</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Subtle Vignette Effect -->
+          <div class="absolute inset-0 pointer-events-none bg-radial-gradient from-transparent via-transparent to-black/30"></div>
         </div>
-        
-        <div class="mt-12 pt-8 border-t">
-          <a href="/blog" class="text-blue-600 hover:text-blue-700">← Back to Blog</a>
+      ) : (
+        <!-- Elegant Fallback Header -->
+        <div class="relative py-24 bg-gradient-to-br from-gray-50 to-white">
+          <div class="container mx-auto px-4">
+            <div class="mx-auto max-w-4xl text-center">
+              <h1 class="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">{title}</h1>
+              <div class="flex items-center justify-center gap-4 text-gray-500 mb-6">
+                <span class="font-medium">{author}</span>
+                <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                <span>AI Automation Insights</span>
+              </div>
+              {excerpt && <p class="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">{excerpt}</p>}
+            </div>
+          </div>
+        </div>
+      )}
+      
+      <div class="container mx-auto px-4 pb-16">
+        <div class="mx-auto max-w-3xl">
+          <div class="prose prose-lg max-w-none">
+            <slot />
+          </div>
+          
+          <div class="mt-12 pt-8 border-t">
+            <a href="/blog" class="text-blue-600 hover:text-blue-700">← Back to Blog</a>
+          </div>
         </div>
       </div>
     </article>
+    
+    <!-- Table of Contents -->
+    <TableOfContents client:load />
   </main>
   <Footer client:load />
 </Layout>
+
+<style>
+  @keyframes ken-burns {
+    0% { transform: scale(1.1) rotate(0deg); }
+    50% { transform: scale(1.15) rotate(0.5deg); }
+    100% { transform: scale(1.1) rotate(0deg); }
+  }
+
+  @keyframes fade-in {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slide-up {
+    0% { opacity: 0; transform: translateY(50px) scale(0.95); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+  }
+
+  .animate-ken-burns {
+    animation: ken-burns 20s ease-in-out infinite;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1.5s ease-out forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 1.2s ease-out forwards;
+    animation-delay: 0.8s;
+    opacity: 0;
+  }
+
+  .parallax-bg {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  .floating-particles::before,
+  .floating-particles::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .floating-particles::before {
+    top: 20%;
+    left: 10%;
+    animation-delay: -2s;
+  }
+
+  .floating-particles::after {
+    top: 60%;
+    right: 15%;
+    animation-delay: -4s;
+  }
+
+  .bg-radial-gradient {
+    background: radial-gradient(circle at center, transparent 0%, transparent 60%, rgba(0,0,0,0.3) 100%);
+  }
+
+  /* Smooth scroll for the scroll indicator */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Glass morphism enhancement */
+  .backdrop-blur-xl {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+  }
+</style>
+
+<script>
+  // Parallax effect on scroll
+  if (typeof window !== 'undefined') {
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const parallaxBg = document.querySelector('.parallax-bg');
+      if (parallaxBg) {
+        parallaxBg.style.transform = `translateY(${scrolled * 0.3}px) scale(1.1)`;
+      }
+    });
+
+    // Add smooth reveal animations on load
+    window.addEventListener('load', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      });
+
+      document.querySelectorAll('.animate-fade-in, .animate-slide-up').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  }
+</script>

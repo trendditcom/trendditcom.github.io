@@ -1,9 +1,10 @@
 ---
+layout: '@layouts/BlogPost.astro'
 title: "Coding with Claude Code"
-description: "
-Andrej Karpathy (previously Director of AI at Tesla, founding team at OpenAI, CS231n/PhD at Stanford) coined the phrase vibe coding in [his Feb 2025 tweet](..."
+date: "2025-07-05"
 author: "Trenddit Team"
-publishedAt: "2025-07-05"
+excerpt: "Explore the killer app of GenAI 2025 - vibe coding - and how Claude Code is revolutionizing software development."
+featuredImage: "/images/blog/vscode-claude-code-puppeteer.png"
 tags: ["ai", "automation", "development", "workflows", "productivity", "aws", "knowledge-management", "trenddit"]
 ---
 

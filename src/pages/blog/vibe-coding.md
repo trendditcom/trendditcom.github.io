@@ -1,9 +1,10 @@
 ---
+layout: '@layouts/BlogPost.astro'
 title: "Vibe Coding"
-description: "
-Teams can prompt my way to generate simple apps using Claude Code. However there are rails required to achieve production quality results and deliver reason..."
+date: "2025-07-05"
 author: "Trenddit Team"
-publishedAt: "2025-07-05"
+excerpt: "Discover the rails required to achieve production quality results when generating apps using Claude Code and AI automation."
+featuredImage: "/images/blog/vibe-coding-workflows.png"
 tags: ["ai", "automation", "development", "workflows", "productivity", "aws", "knowledge-management", "trenddit"]
 ---
 
