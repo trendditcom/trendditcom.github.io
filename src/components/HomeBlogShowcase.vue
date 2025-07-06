@@ -5,10 +5,10 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-20">
           <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Expert Advisory Insights
+            Latest from Our Blog
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Discover strategies for AI agents, lean workflows, and intelligent automation practices
+            Discover insights on AI automation, development workflows, and lean technology solutions
           </p>
         </div>
       </div>
@@ -56,7 +56,7 @@
               <div class="pt-4">
                 <a 
                   :href="`/blog/${post.slug}`"
-                  class="inline-flex items-center group bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  class="inline-flex items-center group bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
                   <span>Read More</span>
                   <svg 
@@ -78,7 +78,7 @@
                   <span 
                     v-for="tag in post.tags.slice(0, 2)" 
                     :key="tag"
-                    class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-medium rounded-full"
+                    class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded-full"
                   >
                     {{ tag }}
                   </span>
@@ -94,20 +94,20 @@
     <div class="bg-white py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center pt-16 border-t border-gray-200">
-        <a 
-          href="/blog"
-          class="inline-flex items-center group bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-10 py-5 rounded-full text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-        >
-          <span>Explore All Posts</span>
-          <svg 
-            class="ml-3 w-6 h-6 transform group-hover:translate-x-1 transition-transform duration-300" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
+          <a 
+            href="/blog"
+            class="inline-flex items-center group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-10 py-5 rounded-full text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           >
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-          </svg>
-        </a>
+            <span>Explore All Posts</span>
+            <svg 
+              class="ml-3 w-6 h-6 transform group-hover:translate-x-1 transition-transform duration-300" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
         </div>
       </div>
     </div>
@@ -124,21 +124,22 @@ interface BlogPost {
   featuredImage: string;
   author: string;
   tags: string[];
+  date?: string;
 }
 
 const featuredPosts = ref<BlogPost[]>([]);
 
 onMounted(async () => {
-  await loadFeaturedPosts();
+  await loadLatestPosts();
 });
 
-const loadFeaturedPosts = async () => {
+const loadLatestPosts = async () => {
   try {
     // Get all blog posts
     const allPosts = await import.meta.glob('/src/pages/blog/*.md');
     const postEntries = Object.entries(allPosts);
     
-    // Load and process posts
+    // Load and process posts with dates
     const loadedPosts = await Promise.all(
       postEntries.map(async ([path, loadPost]) => {
         try {
@@ -151,7 +152,8 @@ const loadFeaturedPosts = async () => {
             excerpt: post.frontmatter?.excerpt || 'No excerpt available',
             featuredImage: post.frontmatter?.featuredImage || '/images/blog/vibe-coding-workflows.png',
             author: post.frontmatter?.author || 'Trenddit Team',
-            tags: post.frontmatter?.tags || []
+            tags: post.frontmatter?.tags || [],
+            date: post.frontmatter?.publishDate || post.frontmatter?.date || new Date().toISOString()
           };
         } catch (error) {
           console.warn(`Failed to load post: ${path}`, error);
@@ -160,64 +162,55 @@ const loadFeaturedPosts = async () => {
       })
     );
     
-    // Filter posts by AI Agents, Lean Workflows, and related tags
-    const validPosts = loadedPosts.filter(post => 
-      post !== null && 
-      post.tags.some(tag => 
-        tag.toLowerCase().includes('ai-agents') ||
-        tag.toLowerCase().includes('lean') ||
-        tag.toLowerCase().includes('workflow') ||
-        tag.toLowerCase().includes('automation') ||
-        tag.toLowerCase().includes('enterprise') ||
-        tag.toLowerCase().includes('advisory') ||
-        tag.toLowerCase().includes('strategy') ||
-        tag.toLowerCase().includes('development') ||
-        tag.toLowerCase().includes('architecture')
-      )
-    ) as BlogPost[];
+    // Filter out failed loads and sort by date (most recent first)
+    const validPosts = (loadedPosts.filter(post => post !== null) as BlogPost[])
+      .sort((a, b) => new Date(b.date!).getTime() - new Date(a.date!).getTime());
     
-    // If no specific posts found, get posts with general AI/development themes
-    if (validPosts.length === 0) {
-      const generalPosts = loadedPosts.filter(post => 
-        post !== null && 
-        post.tags.some(tag => 
-          tag.toLowerCase().includes('ai') ||
-          tag.toLowerCase().includes('development') ||
-          tag.toLowerCase().includes('best-practices')
-        )
-      ) as BlogPost[];
-      
-      featuredPosts.value = generalPosts.slice(0, 3);
-    } else {
-      featuredPosts.value = validPosts.slice(0, 3);
-    }
+    // Get the 5 most recent posts
+    featuredPosts.value = validPosts.slice(0, 5);
 
-    // Fallback posts if still empty
+    // Fallback posts if no posts loaded
     if (featuredPosts.value.length === 0) {
       featuredPosts.value = [
         {
-          slug: 'enterprise-ai-development-workflows',
-          title: 'Enterprise AI Development Workflows: A Strategic Approach',
-          excerpt: 'Learn how to implement scalable AI development workflows that drive business value and maintain high quality standards in enterprise environments.',
+          slug: 'coding-with-claude-code',
+          title: 'Coding with Claude Code: A Developer\'s Guide',
+          excerpt: 'Learn how to maximize your productivity using Claude Code for AI-assisted development workflows.',
           featuredImage: '/images/blog/vibe-coding-workflows.png',
           author: 'Trenddit Team',
-          tags: ['ai-agents', 'enterprise', 'workflow']
-        },
-        {
-          slug: 'lean-ai-stack-selection',
-          title: 'Lean AI Stack Selection: Choosing the Right Tools',
-          excerpt: 'A comprehensive guide to selecting AI-optimized technology stacks that accelerate development while maintaining lean principles.',
-          featuredImage: '/images/blog/first-sprint-generation.png',
-          author: 'Trenddit Team',
-          tags: ['lean', 'ai', 'strategy']
+          tags: ['ai', 'development', 'tools']
         },
         {
           slug: 'ai-automation-best-practices',
           title: 'AI Automation Best Practices for Modern Teams',
-          excerpt: 'Essential practices for implementing AI automation that enhances productivity while maintaining code quality and team collaboration.',
+          excerpt: 'Essential practices for implementing AI automation that enhances productivity while maintaining code quality.',
           featuredImage: '/images/blog/vibe-coding-workflows.png',
           author: 'Trenddit Team',
-          tags: ['automation', 'best-practices', 'ai']
+          tags: ['ai', 'automation', 'best-practices']
+        },
+        {
+          slug: 'lean-ai-stack-selection',
+          title: 'Lean AI Stack Selection: Choosing the Right Tools',
+          excerpt: 'A comprehensive guide to selecting AI-optimized technology stacks for rapid development.',
+          featuredImage: '/images/blog/first-sprint-generation.png',
+          author: 'Trenddit Team',
+          tags: ['ai', 'technology-stack', 'guide']
+        },
+        {
+          slug: 'enterprise-ai-development-workflows',
+          title: 'Enterprise AI Development Workflows',
+          excerpt: 'Best practices for implementing AI-driven development workflows in enterprise environments.',
+          featuredImage: '/images/blog/vibe-coding-workflows.png',
+          author: 'Trenddit Team',
+          tags: ['enterprise', 'ai', 'workflow']
+        },
+        {
+          slug: 'introducing-trenddit-memo-ai-browsing',
+          title: 'Introducing Trenddit Memo: AI-Powered Browsing',
+          excerpt: 'Transform your browsing experience with our intelligent Chrome extension for knowledge management.',
+          featuredImage: '/images/blog/select-content-to-capture.png',
+          author: 'Trenddit Team',
+          tags: ['trenddit-memo', 'ai', 'productivity']
         }
       ];
     }
@@ -227,25 +220,15 @@ const loadFeaturedPosts = async () => {
     // Set fallback posts
     featuredPosts.value = [
       {
-        slug: 'enterprise-ai-development-workflows',
-        title: 'Enterprise AI Development Workflows: A Strategic Approach',
-        excerpt: 'Learn how to implement scalable AI development workflows that drive business value and maintain high quality standards in enterprise environments.',
+        slug: 'coding-with-claude-code',
+        title: 'Coding with Claude Code: A Developer\'s Guide',
+        excerpt: 'Learn how to maximize your productivity using Claude Code for AI-assisted development workflows.',
         featuredImage: '/images/blog/vibe-coding-workflows.png',
         author: 'Trenddit Team',
-        tags: ['ai-agents', 'enterprise', 'workflow']
+        tags: ['ai', 'development', 'tools']
       }
     ];
   }
-};
-
-const getCategoryFromTags = (tags: string[]): string => {
-  if (tags.some(tag => tag.toLowerCase().includes('ai-agents'))) return 'AI Agents';
-  if (tags.some(tag => tag.toLowerCase().includes('lean'))) return 'Lean Workflows';
-  if (tags.some(tag => tag.toLowerCase().includes('workflow'))) return 'Workflows';
-  if (tags.some(tag => tag.toLowerCase().includes('automation'))) return 'Automation';
-  if (tags.some(tag => tag.toLowerCase().includes('enterprise'))) return 'Enterprise';
-  if (tags.some(tag => tag.toLowerCase().includes('strategy'))) return 'Strategy';
-  return 'Advisory';
 };
 </script>
 

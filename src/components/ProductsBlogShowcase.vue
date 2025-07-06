@@ -1,28 +1,29 @@
 <template>
-  <section class="w-full py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Section Header -->
-      <div class="text-center mb-20">
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-          Trenddit Memo Insights
-        </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-          Discover how to maximize your productivity with our AI-powered knowledge management tool
-        </p>
+  <section class="w-full">
+    <!-- Section Header -->
+    <div class="bg-white py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Trenddit Memo Insights
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Discover how to maximize your productivity with our AI-powered knowledge management tool
+          </p>
+        </div>
       </div>
+    </div>
 
-      <!-- Blog Posts Showcase -->
-      <div class="space-y-0">
-        <article
-          v-for="(post, index) in featuredPosts"
-          :key="post.slug"
-          class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center py-24"
-          :class="[
-            { 'lg:grid-flow-col-dense': index % 2 === 1 },
-            index % 2 === 0 ? 'bg-gray-50' : 'bg-white'
-          ]"
-        >
-          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center" :class="{ 'lg:grid-flow-col-dense': index % 2 === 1 }">
+    <!-- Blog Posts Showcase -->
+    <div class="space-y-0">
+      <article
+        v-for="(post, index) in featuredPosts"
+        :key="post.slug"
+        class="w-full py-24"
+        :class="index % 2 === 0 ? 'bg-gray-50' : 'bg-white'"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center" :class="{ 'lg:grid-flow-col-dense': index % 2 === 1 }">
             <!-- Image Section -->
             <div 
               class="relative group"
@@ -85,11 +86,14 @@
               </div>
             </div>
           </div>
-        </article>
-      </div>
+        </div>
+      </article>
+    </div>
 
-      <!-- View All Posts CTA -->
-      <div class="text-center mt-20 pt-16 border-t border-gray-200">
+    <!-- View All Posts CTA -->
+    <div class="bg-white py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center pt-16 border-t border-gray-200">
         <a 
           href="/blog"
           class="inline-flex items-center group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-10 py-5 rounded-full text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
@@ -104,6 +108,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
           </svg>
         </a>
+        </div>
       </div>
     </div>
   </section>
