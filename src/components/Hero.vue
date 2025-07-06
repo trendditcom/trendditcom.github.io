@@ -1,20 +1,8 @@
 <template>
   <!-- Apple-style Epic Hero Section -->
-  <section class="relative min-h-screen overflow-hidden bg-black">
-    <!-- Background Image with Parallax Effect -->
-    <div class="absolute inset-0 parallax-bg">
-      <img 
-        src="/images/blog/select-content-to-capture.png"
-        alt="Trenddit Memo - AI-Powered Knowledge Management"
-        class="w-full h-full object-cover scale-110 animate-ken-burns"
-        style="filter: brightness(0.7) contrast(1.1) saturate(1.2);"
-      />
-    </div>
-    
-    <!-- Multi-layered Gradient Overlays for Depth -->
-    <div class="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-black/60"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-blue-900/20 via-transparent to-purple-900/20"></div>
+  <section class="relative min-h-screen overflow-hidden bg-gradient-to-br from-pink-900 to-purple-900">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 bg-wave-pattern opacity-15"></div>
     
     <!-- Animated Particles/Dots -->
     <div class="absolute inset-0 opacity-30">
@@ -133,25 +121,18 @@ const scrollToProducts = () => {
 </script>
 
 <style scoped>
-/* Apple-style Epic Animations */
-@keyframes ken-burns {
-  0% {
-    transform: scale(1.1) translateX(0px) translateY(0px);
-  }
-  25% {
-    transform: scale(1.15) translateX(-10px) translateY(-5px);
-  }
-  50% {
-    transform: scale(1.2) translateX(5px) translateY(-10px);
-  }
-  75% {
-    transform: scale(1.15) translateX(-5px) translateY(5px);
-  }
-  100% {
-    transform: scale(1.1) translateX(0px) translateY(0px);
-  }
+/* Wave background pattern */
+.bg-wave-pattern {
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+    radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.05) 41%, rgba(255, 255, 255, 0.05) 42%, transparent 43%),
+    linear-gradient(-45deg, transparent 40%, rgba(255, 255, 255, 0.05) 41%, rgba(255, 255, 255, 0.05) 42%, transparent 43%);
+  background-size: 120px 120px, 80px 80px, 60px 60px, 60px 60px;
+  background-position: 0 0, 40px 40px, 20px 20px, 30px 30px;
 }
 
+/* Apple-style Epic Animations */
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -194,10 +175,6 @@ const scrollToProducts = () => {
   }
 }
 
-.animate-ken-burns {
-  animation: ken-burns 20s ease-in-out infinite;
-}
-
 .animate-fade-in {
   animation: fade-in 1.2s ease-out forwards;
 }
@@ -210,11 +187,6 @@ const scrollToProducts = () => {
 .animate-slide-up-delayed {
   animation: slide-up-delayed 1s ease-out 0.6s forwards;
   opacity: 0;
-}
-
-.parallax-bg {
-  will-change: transform;
-  transform: translateZ(0);
 }
 
 .floating-particles {
