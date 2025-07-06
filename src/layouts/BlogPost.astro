@@ -163,14 +163,12 @@ const allPosts = await Astro.glob('../pages/blog/*.{md,mdx}');
   }
 
   .animate-fade-in {
-    animation: fade-in 1.5s ease-out forwards;
-    animation-delay: 0.3s;
+    animation: fade-in 1.2s ease-out forwards;
     opacity: 0;
   }
 
   .animate-slide-up {
-    animation: slide-up 1.2s ease-out forwards;
-    animation-delay: 0.8s;
+    animation: slide-up 1s ease-out 0.3s forwards;
     opacity: 0;
   }
 
@@ -229,20 +227,19 @@ const allPosts = await Astro.glob('../pages/blog/*.{md,mdx}');
       }
     });
 
-    // Add smooth reveal animations on load
-    window.addEventListener('load', () => {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-          }
-        });
-      });
-
+    // Ensure smooth animations start immediately when page loads
+    document.addEventListener('DOMContentLoaded', () => {
+      // Force elements to be hidden initially
       document.querySelectorAll('.animate-fade-in, .animate-slide-up').forEach(el => {
-        observer.observe(el);
+        el.style.opacity = '0';
       });
+      
+      // Trigger animations after a brief delay to ensure proper rendering
+      setTimeout(() => {
+        document.querySelectorAll('.animate-fade-in, .animate-slide-up').forEach(el => {
+          el.style.animationPlayState = 'running';
+        });
+      }, 100);
     });
   }
 </script>
