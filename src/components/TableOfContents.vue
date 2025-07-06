@@ -1,25 +1,49 @@
 <template>
   <div 
-    v-if="headings && headings.length > 0"
+    v-if="firstLevelHeadings && firstLevelHeadings.length > 0"
     :class="[
       'table-of-contents fixed right-4 top-1/2 transform -translate-y-1/2 hidden lg:block z-50',
       'transition-all duration-300 ease-in-out',
       isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'
     ]"
   >
-    <div class="bg-white shadow-lg rounded-lg p-4 max-w-xs border border-gray-200">
-      <h3 class="text-sm font-semibold text-gray-700 mb-3">Table of Contents</h3>
-      <nav class="space-y-2">
+    <div class="bg-white shadow-lg rounded-lg border border-gray-200 overflow-hidden">
+      <!-- Toggle Button -->
+      <button
+        @click="toggleTocVisibility"
+        :class="[
+          'w-full flex items-center justify-between p-3 bg-gray-50 hover:bg-gray-100',
+          'text-sm font-semibold text-gray-700 transition-colors duration-200',
+          'border-b border-gray-200'
+        ]"
+      >
+        <span>Table of Contents</span>
+        <svg
+          :class="[
+            'w-4 h-4 transition-transform duration-200',
+            isTocExpanded ? 'rotate-180' : ''
+          ]"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
+        </svg>
+      </button>
+      
+      <!-- Content -->
+      <nav 
+        v-show="isTocExpanded"
+        class="p-4 space-y-2 max-w-xs"
+      >
         <a
-          v-for="heading in headings"
+          v-for="heading in firstLevelHeadings"
           :key="heading.id"
           :href="`#${heading.id}`"
           :class="[
-            'toc-item',
-            `toc-level-${heading.level}`,
-            'block text-sm hover:text-blue-600 transition-colors duration-200'
+            'toc-item block text-sm hover:text-blue-600 transition-colors duration-200',
+            'font-medium text-gray-800'
           ]"
-          :style="{ paddingLeft: `${(heading.level - 2) * 12}px` }"
           @click="scrollToHeading(heading.id)"
         >
           {{ heading.text }}
@@ -44,12 +68,20 @@ interface Props {
 
 const props = defineProps<Props>();
 const headings = ref<Heading[]>(props.headings || []);
-const isVisible = ref(false);
+const firstLevelHeadings = ref<Heading[]>(
+  props.headings ? props.headings.filter(h => h.level === 2) : []
+);
+const isVisible = ref(false); // Start hidden until scrolled past hero
+const isTocExpanded = ref(true);
 
 onMounted(() => {
   // If no headings are provided via props, extract them from the page
   if (!props.headings || props.headings.length === 0) {
     extractHeadingsFromPage();
+  } else {
+    // Set headings and filter to only show first-level (h2)
+    headings.value = props.headings;
+    filterFirstLevelHeadings();
   }
 
   // Set up scroll listener for visibility
@@ -62,13 +94,14 @@ const setupScrollListener = () => {
   let heroScrolledPast = false;
   let lastSectionVisible = false;
   
-  // Find the hero section (either with featured image or fallback header)
-  const heroWithImage = document.querySelector('.relative.min-h-screen.overflow-hidden');
-  const heroFallback = document.querySelector('.relative.py-24.bg-gradient-to-br');
-  heroSection = heroWithImage || heroFallback;
-  
-  // Find the related posts section or last heading
+  // Add a small delay to ensure DOM is fully loaded and prevent flashing
   setTimeout(() => {
+    // Find the hero section (either with featured image or fallback header)
+    const heroWithImage = document.querySelector('.relative.min-h-screen.overflow-hidden');
+    const heroFallback = document.querySelector('.relative.py-24.bg-gradient-to-br');
+    heroSection = heroWithImage || heroFallback;
+    
+    // Find the related posts section or last heading
     const relatedPostsSection = document.querySelector('[data-related-posts]') ||
                                  document.querySelector('h3') ||
                                  document.querySelector('.mt-16.pt-8.border-t');
@@ -99,36 +132,39 @@ const setupScrollListener = () => {
       
       lastSectionObserver.observe(lastHeading);
     }
-  }, 100); // Small delay to ensure components are rendered
+    
+    if (heroSection) {
+      const heroObserver = new IntersectionObserver(
+        (entries) => {
+          const heroEntry = entries[0];
+          // Only consider hero scrolled past when it's completely out of view
+          heroScrolledPast = !heroEntry.isIntersecting || heroEntry.intersectionRatio === 0;
+          
+          // Update visibility based on both conditions
+          isVisible.value = heroScrolledPast && !lastSectionVisible;
+        },
+        {
+          rootMargin: '-100px 0px 0px 0px', // Trigger only after hero is 100px out of view
+          threshold: [0]
+        }
+      );
 
-  if (heroSection) {
-    const heroObserver = new IntersectionObserver(
-      (entries) => {
-        const heroEntry = entries[0];
-        heroScrolledPast = !heroEntry.isIntersecting || heroEntry.intersectionRatio < 0.1;
-        
-        // Update visibility based on both conditions
-        isVisible.value = heroScrolledPast && !lastSectionVisible;
-      },
-      {
-        rootMargin: '-10% 0px -10% 0px', // Trigger when hero is mostly out of view
-        threshold: [0, 0.1, 0.5, 1]
-      }
-    );
+      heroObserver.observe(heroSection);
+    } else {
+      // Fallback: show TOC after scrolling past viewport height if no hero section found
+      const handleScroll = () => {
+        // Only show after scrolling past the viewport height
+        isVisible.value = window.scrollY > window.innerHeight;
+      };
 
-    heroObserver.observe(heroSection);
-  } else {
-    // Fallback: show TOC after scrolling 300px if no hero section found
-    const handleScroll = () => {
-      isVisible.value = window.scrollY > 300;
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-  }
+      window.addEventListener('scroll', handleScroll, { passive: true });
+    }
+  }, 200); // Increased delay to prevent initial flash
 };
 
 const extractHeadingsFromPage = () => {
-  const headingElements = document.querySelectorAll('.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6');
+  // Only extract h2 headings (first-level headings)
+  const headingElements = document.querySelectorAll('.prose h2');
   const extractedHeadings: Heading[] = [];
 
   headingElements.forEach((element) => {
@@ -150,6 +186,16 @@ const extractHeadingsFromPage = () => {
   });
 
   headings.value = extractedHeadings;
+  firstLevelHeadings.value = extractedHeadings;
+};
+
+const filterFirstLevelHeadings = () => {
+  // Filter to only show h2 headings
+  firstLevelHeadings.value = headings.value.filter(heading => heading.level === 2);
+};
+
+const toggleTocVisibility = () => {
+  isTocExpanded.value = !isTocExpanded.value;
 };
 
 const generateHeadingId = (text: string): string => {
@@ -170,24 +216,11 @@ const scrollToHeading = (id: string) => {
 </script>
 
 <style scoped>
-.toc-level-2 {
-  font-weight: 500;
-  color: rgb(31 41 55);
+.toc-item {
+  transition: all 0.2s ease;
 }
 
-.toc-level-3 {
-  color: rgb(75 85 99);
-}
-
-.toc-level-4 {
-  color: rgb(107 114 128);
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
-
-.toc-level-5, .toc-level-6 {
-  color: rgb(156 163 175);
-  font-size: 0.75rem;
-  line-height: 1rem;
+.toc-item:hover {
+  padding-left: 0.25rem;
 }
 </style>

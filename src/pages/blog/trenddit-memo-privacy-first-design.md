@@ -1,17 +1,17 @@
 ---
 layout: '@layouts/BlogPost.astro'
-title: "Trenddit Memo Privacy-First Design: Local Storage, Encrypted Keys, and Ollama Integration"
+title: "Trenddit Memo Privacy-First Design: Local Storage and Encrypted API Keys"
 date: "2025-07-06"
 author: "Trenddit Team"
-excerpt: "Complete privacy control with local-first storage, encrypted API keys, and optional local AI processing with Ollama. Your data belongs to you."
+excerpt: "Your data belongs to you. Learn how Trenddit Memo's local-first architecture and encrypted key management protect your privacy without compromising functionality."
 featuredImage: "/images/blog/tags.png"
-relatedPosts: ["introducing-trenddit-memo-ai-browsing", "trenddit-memo-multi-ai-providers", "trenddit-memo-youtube-integration"]
-tags: ["trenddit-memo", "privacy", "security", "local-first", "ollama", "encryption", "data-ownership"]
+relatedPosts: ["trenddit-memo-ollama-local-ai", "introducing-trenddit-memo-ai-browsing", "trenddit-memo-multi-ai-providers"]
+tags: ["trenddit-memo", "privacy", "security", "local-first", "encryption", "data-ownership"]
 ---
 
 Privacy isn't an afterthought in Trenddit Memo—it's fundamental to our design. We believe **your data belongs to you**, and we've built every aspect of our Chrome extension around this principle.
 
-From local-first storage to encrypted API keys and complete offline AI processing with Ollama, Trenddit Memo gives you full control over your information.
+From local-first storage to encrypted API keys, Trenddit Memo gives you full control over your information without sacrificing functionality.
 
 ## Why Privacy Matters for Knowledge Management
 
@@ -32,7 +32,7 @@ Traditional cloud-first tools require you to trust third parties with this intim
 - All captured content stored on your device using Chrome's secure storage APIs
 - AI processing results cached locally for offline access
 - No server-side storage of your personal content
-- Complete functionality without internet connection (with Ollama)
+- Complete functionality without internet connection (with local AI)
 
 ### How Local Storage Works
 
@@ -92,50 +92,6 @@ Your Input    Native Chrome    Extension     Direct Provider
 - **Segmented access**: Each AI provider's keys isolated from others
 - **Revocable**: Easy to remove or change keys without affecting other data
 
-## Complete Privacy with Ollama
-
-### 100% Local AI Processing
-
-For maximum privacy, use Ollama to run AI models entirely on your machine:
-
-**Complete offline operation:**
-- No data ever sent to external servers
-- All AI processing happens on your device
-- Full functionality without internet connection
-- Zero ongoing costs after initial setup
-
-![Local AI Processing with Ollama](/images/blog/tags.png)
-
-### Ollama Setup and Benefits
-
-**Privacy advantages:**
-- **Air-gapped processing**: Content never leaves your network
-- **Audit-friendly**: Complete transparency in data handling
-- **Compliance-ready**: Meets strictest privacy regulations
-- **Cost-effective**: No per-request charges after setup
-
-**Enhanced Ollama integration:**
-- **Automatic model detection**: Discovers your installed models
-- **Robust retry logic**: Handles connection issues gracefully
-- **Performance optimization**: Smart caching and batching
-- **Error recovery**: Comprehensive failure handling
-
-### When to Use Local Processing
-
-**Ideal scenarios for Ollama:**
-- **Sensitive business content**: Competitive research, strategic planning
-- **Personal information**: Health, finance, or family-related content
-- **Compliance requirements**: Industries with strict data regulations
-- **Confidential work**: Legal, medical, or consulting projects
-
-**Local processing workflow:**
-```
-Sensitive Content → Local Capture → Ollama Processing → Local Storage
-       ↓               ↓              ↓                ↓
-   Private Web      Your Device    Your AI Model    Your Data
-    Content         Only           Only             Only
-```
-
 ## Privacy-First Features
 
 ### No Tracking or Analytics
@@ -174,7 +130,7 @@ Sensitive Content → Local Capture → Ollama Processing → Local Storage
 - Benefit from latest AI capabilities
 
 **Sensitive content** (business strategy, personal projects):
-- Use Ollama for complete privacy
+- Use local AI processing for complete privacy
 - Disable sync for this content
 - Keep processing entirely local
 
@@ -241,38 +197,24 @@ Sensitive Content → Local Capture → Ollama Processing → Local Storage
 - **Audit requirements**: Complete processing logs and data lineage
 - **Compliance reporting**: Generate privacy and security reports
 
-## The Future of Private AI
-
-Trenddit Memo demonstrates that you don't have to sacrifice privacy for AI capabilities:
-
-**Evolving privacy landscape:**
-- **Local AI advancement**: More powerful models running locally
-- **Hybrid processing**: Smart routing between local and cloud based on sensitivity
-- **Privacy-preserving AI**: Techniques like federated learning and differential privacy
-- **User control**: Granular privacy controls becoming the standard
-
-**Our privacy roadmap:**
-- Enhanced local processing capabilities
-- Advanced privacy analytics and controls
-- Zero-knowledge sync options
-- Privacy-preserving collaboration features
-
-## Take Control of Your Data
+## Privacy Without Compromise
 
 With Trenddit Memo, you don't have to choose between powerful AI features and data privacy:
 
 **Privacy without compromise:**
 - ✅ **Local-first storage** keeps your content on your device
 - ✅ **Encrypted API keys** protect your credentials
-- ✅ **Optional local AI** with Ollama for complete privacy
 - ✅ **No tracking** or surveillance of your usage
 - ✅ **Full data control** with export and deletion capabilities
+- ✅ **Granular controls** for different privacy levels
 
 **Privacy that scales:**
 - Start with cloud providers for convenience
 - Gradually move sensitive content to local processing
 - Maintain different privacy levels for different content types
 - Scale privacy controls as your usage grows
+
+For complete privacy, consider using [Ollama for local AI processing](./trenddit-memo-ollama-local-ai) where no data ever leaves your device.
 
 [Experience privacy-first AI with Trenddit Memo →](https://github.com/trendditcom/trenddit-memo)
 
