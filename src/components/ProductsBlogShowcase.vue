@@ -182,9 +182,9 @@ const loadFeaturedPosts = async () => {
         )
       ) as BlogPost[];
       
-      featuredPosts.value = aiPosts.slice(0, 3);
+      featuredPosts.value = aiPosts.slice(0, 5);
     } else {
-      featuredPosts.value = validPosts.slice(0, 3);
+      featuredPosts.value = validPosts.slice(0, 5);
     }
 
     // Fallback posts if still empty
@@ -213,6 +213,22 @@ const loadFeaturedPosts = async () => {
           featuredImage: '/images/blog/select-content-to-capture.png',
           author: 'Trenddit Team',
           tags: ['trenddit-memo', 'ai-providers', 'flexibility']
+        },
+        {
+          slug: 'trenddit-memo-youtube-integration',
+          title: 'YouTube Integration in Trenddit Memo',
+          excerpt: 'Seamlessly capture and organize YouTube content with our intelligent video content extraction capabilities.',
+          featuredImage: '/images/blog/select-content-to-capture.png',
+          author: 'Trenddit Team',
+          tags: ['trenddit-memo', 'youtube', 'video-content']
+        },
+        {
+          slug: 'trenddit-memo-ollama-local-ai',
+          title: 'Local AI with Ollama in Trenddit Memo',
+          excerpt: 'Run AI models locally for enhanced privacy and control over your knowledge management workflows.',
+          featuredImage: '/images/blog/select-content-to-capture.png',
+          author: 'Trenddit Team',
+          tags: ['trenddit-memo', 'ollama', 'local-ai']
         }
       ];
     }

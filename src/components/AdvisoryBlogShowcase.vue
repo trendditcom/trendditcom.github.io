@@ -187,9 +187,9 @@ const loadFeaturedPosts = async () => {
         )
       ) as BlogPost[];
       
-      featuredPosts.value = generalPosts.slice(0, 3);
+      featuredPosts.value = generalPosts.slice(0, 5);
     } else {
-      featuredPosts.value = validPosts.slice(0, 3);
+      featuredPosts.value = validPosts.slice(0, 5);
     }
 
     // Fallback posts if still empty
@@ -218,6 +218,22 @@ const loadFeaturedPosts = async () => {
           featuredImage: '/images/blog/vibe-coding-workflows.png',
           author: 'Trenddit Team',
           tags: ['automation', 'best-practices', 'ai']
+        },
+        {
+          slug: 'vibeflow-mcp-automation',
+          title: 'VibeFlow MCP Automation: Streamlining Workflows',
+          excerpt: 'Discover how VibeFlow MCP automation can revolutionize your development workflows with intelligent process optimization.',
+          featuredImage: '/images/blog/vibe-coding-workflows.png',
+          author: 'Trenddit Team',
+          tags: ['automation', 'workflow', 'vibeflow']
+        },
+        {
+          slug: 'aws-solutions-architecture-automation',
+          title: 'AWS Solutions Architecture Automation',
+          excerpt: 'Learn how to automate AWS solutions architecture for scalable, efficient cloud infrastructure deployment.',
+          featuredImage: '/images/blog/vibe-coding-workflows.png',
+          author: 'Trenddit Team',
+          tags: ['aws', 'automation', 'architecture']
         }
       ];
     }
