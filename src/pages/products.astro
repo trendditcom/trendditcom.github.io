@@ -3,7 +3,7 @@ import Layout from '@layouts/Layout.astro';
 import Header from '@components/Header.vue';
 import ProductsHero from '@components/ProductsHero.vue';
 import Products from '@components/Products.vue';
-import ProductsBlogCarousel from '@components/ProductsBlogCarousel.vue';
+import ProductsBlogShowcase from '@components/ProductsBlogShowcase.vue';
 import Footer from '@components/Footer.vue';
 ---
 
@@ -15,7 +15,7 @@ import Footer from '@components/Footer.vue';
   <main>
     <ProductsHero client:load />
     <Products client:load />
-    <ProductsBlogCarousel client:load />
+    <ProductsBlogShowcase client:load />
   </main>
   <Footer client:load />
 </Layout>
