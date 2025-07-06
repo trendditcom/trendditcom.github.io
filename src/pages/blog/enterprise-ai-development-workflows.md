@@ -6,7 +6,7 @@ author: "Trenddit Team"
 excerpt: "Discover advanced AI development workflows for building sophisticated applications like VibeFlow - a document management and automation CLI."
 featuredImage: "/images/blog/high-level-architecture.png"
 relatedPosts: ["ai-automation-best-practices", "ai-powered-document-workflows", "lean-ai-stack-selection"]
-tags: ["enterprise", "ai", "automation", "development", "workflows", "cli", "architecture", "trenddit"]
+tags: ["enterprise", "ai", "automation", "development", "workflows", "cli", "architecture", "trenddit", "AI Agents", "Code Generation", "Lean Workflows"]
 ---
 
 In enterprise environments, development teams need to tackle more ambitiously featured projects that go beyond simple prototypes. While teams can continue to follow the foundational AI automation practices, they must adopt advanced variants that address enterprise-scale complexity and requirements.

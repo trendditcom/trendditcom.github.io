@@ -6,7 +6,7 @@ author: "Trenddit Team"
 excerpt: "Capture YouTube videos with automatic transcript extraction and have intelligent conversations with video content. Transform educational videos into searchable, interactive knowledge."
 featuredImage: "/images/blog/save-memo.png"
 relatedPosts: ["introducing-trenddit-memo-ai-browsing", "trenddit-memo-multi-ai-providers", "trenddit-memo-privacy-local-first"]
-tags: ["trenddit-memo", "youtube", "video", "transcripts", "ai", "learning", "education", "content-capture"]
+tags: ["trenddit-memo", "youtube", "video", "transcripts", "ai", "learning", "education", "content-capture", "Trenddit Memo", "AI Agents"]
 ---
 
 We're excited to share one of our most requested features: **YouTube integration**. Now you can capture YouTube videos with one click and have intelligent conversations with the video content using AI.

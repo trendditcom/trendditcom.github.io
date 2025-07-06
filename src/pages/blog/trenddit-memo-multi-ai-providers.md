@@ -6,7 +6,7 @@ author: "Trenddit Team"
 excerpt: "Compare and switch between Anthropic Claude, OpenAI GPT, Google Gemini, and local Ollama models seamlessly. Choose the right AI for each task with unified provider interface."
 featuredImage: "/images/blog/chat-with-memo.png"
 relatedPosts: ["introducing-trenddit-memo-ai-browsing", "trenddit-memo-privacy-local-first", "trenddit-memo-youtube-integration"]
-tags: ["trenddit-memo", "ai-providers", "claude", "gpt", "gemini", "ollama", "comparison", "integration"]
+tags: ["trenddit-memo", "ai-providers", "claude", "gpt", "gemini", "ollama", "comparison", "integration", "Trenddit Memo", "AI Agents"]
 ---
 
 One of Trenddit Memo's most powerful features is **multi-AI provider support**. Instead of being locked into a single AI service, you can choose from four different providers and switch between them based on your specific needs.

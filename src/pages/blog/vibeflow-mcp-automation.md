@@ -6,7 +6,7 @@ author: "Trenddit Team"
 excerpt: "Develop advanced AI automation workflows with VibeFlow, a document management CLI using Model Context Protocol and Amazon Bedrock Claude Sonnet."
 featuredImage: "/images/blog/high-level-architecture.png"
 relatedPosts: ["ai-automation-best-practices", "enterprise-ai-development-workflows", "vibe-coding-workflow-fundamentals"]
-tags: ["mcp", "cli", "python", "document-management", "automation", "bedrock", "claude-sonnet", "workflows", "trenddit"]
+tags: ["mcp", "cli", "python", "document-management", "automation", "bedrock", "claude-sonnet", "workflows", "trenddit", "AI Agents", "Lean Workflows"]
 ---
 
 In this advanced chapter, practitioners are going to develop a more ambitiously featured project. While teams can continue to follow the guidance from Rails of Vibe Coding, teams can try some interesting variants to the vibe coding strategies.

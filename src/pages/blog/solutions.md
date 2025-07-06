@@ -6,7 +6,7 @@ author: "Trenddit Team"
 excerpt: "Complete guide to building AWS solutions using AI-first development, covering product vision, technology stacks, MVP development, and architecture evaluation."
 featuredImage: "/images/blog/first-sprint-generation.png"
 relatedPosts: ["aws-solutions-architecture-patterns", "ai-powered-mvp-development", "vibesolver-architecture-evaluation"]
-tags: ["aws", "solutions-architecture", "ai", "development", "product-vision", "technology-stack", "mvp", "evaluation", "trenddit"]
+tags: ["aws", "solutions-architecture", "ai", "development", "product-vision", "technology-stack", "mvp", "evaluation", "trenddit", "AI Agents", "Lean Workflows"]
 ---
 
 This comprehensive guide has been split into focused articles for better readability and navigation. Each part covers specific aspects of AWS solutions architecture development using AI-first methodologies.

@@ -6,7 +6,7 @@ author: "Trenddit Team"
 excerpt: "Your data belongs to you. Learn how Trenddit Memo's local-first architecture and encrypted key management protect your privacy without compromising functionality."
 featuredImage: "/images/blog/tags.png"
 relatedPosts: ["trenddit-memo-ollama-local-ai", "introducing-trenddit-memo-ai-browsing", "trenddit-memo-multi-ai-providers"]
-tags: ["trenddit-memo", "privacy", "security", "local-first", "encryption", "data-ownership"]
+tags: ["trenddit-memo", "privacy", "security", "local-first", "encryption", "data-ownership", "Trenddit Memo"]
 ---
 
 Privacy isn't an afterthought in Trenddit Memo—it's fundamental to our design. We believe **your data belongs to you**, and we've built every aspect of our Chrome extension around this principle.

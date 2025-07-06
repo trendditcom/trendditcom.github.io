@@ -6,7 +6,7 @@ author: "Trenddit Team"
 excerpt: "Master the three fundamental workflows recommended by Anthropic for production-quality AI-powered development projects."
 featuredImage: "/images/blog/vibe-coding-workflows.png"
 relatedPosts: ["enterprise-ai-development-workflows", "lean-ai-stack-selection", "vibe-coding-workflow-fundamentals"]
-tags: ["ai", "automation", "development", "workflows", "best-practices", "enterprise", "trenddit"]
+tags: ["ai", "automation", "development", "workflows", "best-practices", "enterprise", "trenddit", "AI Agents", "Code Generation", "Lean Workflows"]
 ---
 
 Teams can prompt their way to generate simple apps using Claude Code. However, there are rails required to achieve production quality results and deliver reasonably complex apps. These rails are not any different from those required for hand-coded apps. The rails themselves can be AI augmented.

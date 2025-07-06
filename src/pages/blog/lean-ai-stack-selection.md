@@ -6,7 +6,7 @@ author: "Trenddit Team"
 excerpt: "Complete guide to selecting AI-optimized technology stacks, covering frontend architecture, development infrastructure, and performance optimization strategies."
 featuredImage: "/images/blog/first-sprint-generation.png"
 relatedPosts: ["ai-friendly-frontend-architecture", "ai-development-tools-infrastructure", "technology-stack-optimization"]
-tags: ["ai", "technology-stack", "architecture", "development", "lean", "scalability", "guide", "trenddit"]
+tags: ["ai", "technology-stack", "architecture", "development", "lean", "scalability", "guide", "trenddit", "Code Generation", "Lean Workflows"]
 ---
 
 This comprehensive guide has been split into focused articles for better readability and implementation. Each part covers specific aspects of building AI-optimized technology foundations that accelerate development while maintaining production quality.

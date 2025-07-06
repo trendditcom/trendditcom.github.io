@@ -22,7 +22,7 @@
                 <Button as="a" href="https://github.com/trendditcom/trenddit-memo" target="_blank">
                   View on GitHub
                 </Button>
-                <Button variant="outline" as="a" href="/blog">
+                <Button variant="outline" as="a" href="/blog?tag=Trenddit%20Memo">
                   Learn More
                 </Button>
               </div>

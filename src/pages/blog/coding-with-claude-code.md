@@ -5,7 +5,7 @@ date: "2025-07-05"
 author: "Trenddit Team"
 excerpt: "Explore the killer app of GenAI 2025 - vibe coding - and how Claude Code is revolutionizing software development."
 featuredImage: "/images/blog/vscode-claude-code-puppeteer.png"
-tags: ["ai", "automation", "development", "workflows", "productivity", "aws", "knowledge-management", "trenddit"]
+tags: ["ai", "automation", "development", "workflows", "productivity", "aws", "knowledge-management", "trenddit", "AI Agents", "Code Generation"]
 ---
 
 

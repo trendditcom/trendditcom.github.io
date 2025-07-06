@@ -5,7 +5,7 @@ date: "2025-07-05"
 author: "Trenddit Team"
 excerpt: "Master vibe writing workflows using natural language prompts with LLMs to create, enhance, and organize text content."
 featuredImage: "/images/blog/vibe-writing-summaries.png"
-tags: ["ai", "automation", "development", "workflows", "productivity", "aws", "knowledge-management", "trenddit"]
+tags: ["ai", "automation", "development", "workflows", "productivity", "aws", "knowledge-management", "trenddit", "Trenddit Memo", "Lean Workflows"]
 ---
 
 

@@ -6,7 +6,7 @@ author: "Trenddit Team"
 excerpt: "A Chrome extension that lets you capture content from any website and actually talk to it using AI. Turn your bookmarks into intelligent conversations with multiple AI providers."
 featuredImage: "/images/blog/select-content-to-capture.png"
 relatedPosts: ["trenddit-memo-multi-ai-providers", "trenddit-memo-youtube-integration", "trenddit-memo-privacy-local-first"]
-tags: ["trenddit-memo", "ai", "chrome-extension", "productivity", "research", "bookmarks"]
+tags: ["trenddit-memo", "ai", "chrome-extension", "productivity", "research", "bookmarks", "Trenddit Memo", "AI Agents"]
 ---
 
 We're building something we wished existed: **turn your browsing into conversations with AI**.

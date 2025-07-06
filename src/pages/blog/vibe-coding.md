@@ -5,7 +5,7 @@ date: "2025-07-05"
 author: "Trenddit Team"
 excerpt: "Discover the rails required to achieve production quality results when generating apps using Claude Code and AI automation."
 featuredImage: "/images/blog/vibe-coding-workflows.png"
-tags: ["ai", "automation", "development", "workflows", "productivity", "aws", "knowledge-management", "trenddit"]
+tags: ["ai", "automation", "development", "workflows", "productivity", "aws", "knowledge-management", "trenddit", "AI Agents", "Code Generation", "Lean Workflows"]
 ---
 
 

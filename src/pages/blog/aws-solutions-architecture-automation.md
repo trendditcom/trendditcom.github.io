@@ -6,7 +6,7 @@ author: "Trenddit Team"
 excerpt: "Build VibeSolver - an AI twin of AWS Solutions Architect that automatically generates Well-Architected solutions from natural language requirements."
 featuredImage: "/images/blog/production-solution.png"
 relatedPosts: ["product-vision-driven-development", "lean-ai-stack-selection", "enterprise-ai-development-workflows"]
-tags: ["aws", "solutions-architecture", "automation", "ai", "well-architected", "cloud", "trenddit"]
+tags: ["aws", "solutions-architecture", "automation", "ai", "well-architected", "cloud", "trenddit", "AI Agents", "Lean Workflows"]
 ---
 
 VibeSolver represents the next evolution in cloud solutions architecture - an AI twin of an AWS Solutions Architect that transforms natural language business requirements into comprehensive, Well-Architected AWS solutions. This advanced system demonstrates how AI can accelerate solution design while maintaining enterprise-grade quality and compliance.

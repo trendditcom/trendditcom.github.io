@@ -6,7 +6,7 @@ author: "Trenddit Team"
 excerpt: "Achieve 100% privacy with Ollama integration. Process your content with powerful AI models running entirely on your device—no data ever leaves your computer."
 featuredImage: "/images/blog/tags.png"
 relatedPosts: ["trenddit-memo-privacy-first-design", "introducing-trenddit-memo-ai-browsing", "trenddit-memo-multi-ai-providers"]
-tags: ["trenddit-memo", "ollama", "local-ai", "privacy", "offline", "ai-models"]
+tags: ["trenddit-memo", "ollama", "local-ai", "privacy", "offline", "ai-models", "Trenddit Memo", "AI Agents"]
 ---
 
 For the ultimate in privacy and data control, Trenddit Memo integrates seamlessly with Ollama to provide **100% local AI processing**. Your content never leaves your device, yet you still get powerful AI analysis and organization.

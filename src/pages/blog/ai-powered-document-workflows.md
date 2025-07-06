@@ -6,7 +6,7 @@ author: "Trenddit Team"
 excerpt: "Master advanced document management using AI-powered workflows for content creation, organization, search, and collaborative knowledge management."
 featuredImage: "/images/blog/vibe-writing-summaries.png"
 relatedPosts: ["enterprise-ai-development-workflows", "ai-automation-best-practices", "lean-ai-stack-selection"]
-tags: ["ai", "document-management", "workflows", "automation", "knowledge-management", "content", "trenddit"]
+tags: ["ai", "document-management", "workflows", "automation", "knowledge-management", "content", "trenddit", "Trenddit Memo", "AI Agents", "Lean Workflows"]
 ---
 
 Modern knowledge work increasingly revolves around intelligent document management and automated content workflows. By leveraging AI-powered systems, organizations can transform how they create, organize, search, and collaborate on textual content, dramatically improving productivity and knowledge accessibility.
