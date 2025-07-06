@@ -1,13 +1,21 @@
 ---
-import Layout from '@/layouts/Layout.astro'
-import Products from '@/components/Products.vue'
+import Layout from '@layouts/Layout.astro';
+import Header from '@components/Header.vue';
+import ProductsHero from '@components/ProductsHero.vue';
+import Products from '@components/Products.vue';
+import ProductsBlogCarousel from '@components/ProductsBlogCarousel.vue';
+import Footer from '@components/Footer.vue';
 ---
 
 <Layout 
   title="Products - Trenddit"
   description="Explore Trenddit's AI-powered products for lean automation and knowledge management"
 >
-  <main class="container mx-auto px-4 py-8">
+  <Header client:load />
+  <main>
+    <ProductsHero client:load />
     <Products client:load />
+    <ProductsBlogCarousel client:load />
   </main>
+  <Footer client:load />
 </Layout>
