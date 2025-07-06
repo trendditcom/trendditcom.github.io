@@ -12,75 +12,76 @@
       </div>
 
       <!-- Blog Posts Showcase -->
-      <div class="space-y-32">
+      <div class="space-y-0">
         <article
           v-for="(post, index) in featuredPosts"
           :key="post.slug"
-          class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
-          :class="{ 'lg:grid-flow-col-dense': index % 2 === 1 }"
+          class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center py-24"
+          :class="[
+            { 'lg:grid-flow-col-dense': index % 2 === 1 },
+            index % 2 === 0 ? 'bg-gray-50' : 'bg-white'
+          ]"
         >
-          <!-- Image Section -->
-          <div 
-            class="relative group"
-            :class="index % 2 === 1 ? 'lg:col-start-2' : ''"
-          >
-            <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100 shadow-2xl group-hover:shadow-3xl transition-all duration-500">
-              <img 
-                :src="post.featuredImage"
-                :alt="post.title"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-            <!-- Floating Badge -->
-            <div class="absolute -top-4 -right-4 bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-              Trenddit Memo
-            </div>
-          </div>
-
-          <!-- Content Section -->
-          <div 
-            class="space-y-8"
-            :class="index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''"
-          >
-            <div class="space-y-6">
-              <h3 class="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
-                {{ post.title }}
-              </h3>
-              <p class="text-lg text-gray-600 leading-relaxed">
-                {{ post.excerpt }}
-              </p>
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center" :class="{ 'lg:grid-flow-col-dense': index % 2 === 1 }">
+            <!-- Image Section -->
+            <div 
+              class="relative group"
+              :class="index % 2 === 1 ? 'lg:col-start-2' : ''"
+            >
+              <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100 shadow-2xl group-hover:shadow-3xl transition-all duration-500">
+                <img 
+                  :src="post.featuredImage"
+                  :alt="post.title"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
             </div>
 
-            <!-- CTA Button -->
-            <div class="pt-4">
-              <a 
-                :href="`/blog/${post.slug}`"
-                class="inline-flex items-center group bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-              >
-                <span>Read More</span>
-                <svg 
-                  class="ml-3 w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
+            <!-- Content Section -->
+            <div 
+              class="space-y-8"
+              :class="index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''"
+            >
+              <div class="space-y-6">
+                <h3 class="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+                  {{ post.title }}
+                </h3>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                  {{ post.excerpt }}
+                </p>
+              </div>
+
+              <!-- CTA Button -->
+              <div class="pt-4">
+                <a 
+                  :href="`/blog/${post.slug}`"
+                  class="inline-flex items-center group bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                </svg>
-              </a>
-            </div>
+                  <span>Read More</span>
+                  <svg 
+                    class="ml-3 w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </a>
+              </div>
 
-            <!-- Meta Information -->
-            <div class="flex items-center space-x-4 pt-6 border-t border-gray-200">
-              <span class="text-sm text-gray-500">By {{ post.author }}</span>
-              <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
-              <div class="flex items-center space-x-2">
-                <span 
-                  v-for="tag in post.tags.slice(0, 2)" 
-                  :key="tag"
-                  class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded-full"
-                >
-                  {{ tag }}
-                </span>
+              <!-- Meta Information -->
+              <div class="flex items-center space-x-4 pt-6 border-t border-gray-200">
+                <span class="text-sm text-gray-500">By {{ post.author }}</span>
+                <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                <div class="flex items-center space-x-2">
+                  <span 
+                    v-for="tag in post.tags.slice(0, 2)" 
+                    :key="tag"
+                    class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded-full"
+                  >
+                    {{ tag }}
+                  </span>
+                </div>
               </div>
             </div>
           </div>
