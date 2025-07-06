@@ -74,4 +74,34 @@ describe('TableOfContents', () => {
 
     expect(wrapper.find('.table-of-contents').exists()).toBe(false);
   });
+
+  it('should have scroll-based visibility controls', () => {
+    const headings = [
+      { id: 'heading-1', text: 'Test Heading', level: 2 }
+    ];
+
+    const wrapper = mount(TableOfContents, {
+      props: { headings }
+    });
+
+    const tocElement = wrapper.find('.table-of-contents');
+    expect(tocElement.classes()).toContain('transition-all');
+    expect(tocElement.classes()).toContain('duration-300');
+  });
+
+  it('should start hidden and have proper visibility classes', () => {
+    const headings = [
+      { id: 'heading-1', text: 'Test Heading', level: 2 }
+    ];
+
+    const wrapper = mount(TableOfContents, {
+      props: { headings }
+    });
+
+    const tocElement = wrapper.find('.table-of-contents');
+    // Should start hidden (opacity-0) since isVisible starts as false
+    expect(tocElement.classes()).toContain('opacity-0');
+    expect(tocElement.classes()).toContain('translate-x-full');
+    expect(tocElement.classes()).toContain('pointer-events-none');
+  });
 });

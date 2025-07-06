@@ -3,6 +3,7 @@ import Layout from './Layout.astro';
 import Header from '@components/Header.vue';
 import Footer from '@components/Footer.vue';
 import TableOfContents from '@components/TableOfContents.vue';
+import RelatedPosts from '@components/RelatedPosts.vue';
 
 export interface Props {
   frontmatter: {
@@ -13,11 +14,15 @@ export interface Props {
     featuredImage?: string;
     layout: string;
     tags?: string[];
+    relatedPosts?: string[];
   };
 }
 
 const { frontmatter } = Astro.props;
-const { title, date, author = 'Trenddit Team', excerpt, featuredImage } = frontmatter;
+const { title, date, author = 'Trenddit Team', excerpt, featuredImage, relatedPosts } = frontmatter;
+
+// Get all blog posts for related posts functionality
+const allPosts = await Astro.glob('../pages/blog/*.{md,mdx}');
 ---
 
 <Layout title={`${title} - Trenddit Blog`}>
@@ -110,6 +115,13 @@ const { title, date, author = 'Trenddit Team', excerpt, featuredImage } = frontm
           <div class="prose prose-lg max-w-none">
             <slot />
           </div>
+          
+          <!-- Related Posts Section -->
+          <RelatedPosts 
+            client:load 
+            relatedPostSlugs={relatedPosts}
+            allPosts={allPosts}
+          />
           
           <div class="mt-12 pt-8 border-t">
             <a href="/blog" class="text-blue-600 hover:text-blue-700">← Back to Blog</a>
