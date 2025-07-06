@@ -4,10 +4,6 @@
     <!-- Background Pattern -->
     <div class="absolute inset-0 bg-wave-pattern opacity-15"></div>
     
-    <!-- Animated Particles/Dots -->
-    <div class="absolute inset-0 opacity-30">
-      <div class="floating-particles"></div>
-    </div>
     
     <!-- Content Container with Glass Morphism -->
     <div class="relative z-10 flex items-center justify-center min-h-screen px-4">
@@ -166,14 +162,6 @@ const scrollToProducts = () => {
   }
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
 
 .animate-fade-in {
   animation: fade-in 1.2s ease-out forwards;
@@ -189,16 +177,6 @@ const scrollToProducts = () => {
   opacity: 0;
 }
 
-.floating-particles {
-  background-image: radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.2) 2px, transparent 2px),
-                    radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-                    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15) 1.5px, transparent 1.5px);
-  background-size: 100px 100px, 150px 150px, 80px 80px;
-  background-position: 0 0, 40px 40px, 20px 20px;
-  animation: float 6s ease-in-out infinite;
-  width: 100%;
-  height: 100%;
-}
 
 /* Radial gradient for vignette effect */
 .bg-radial-gradient {
