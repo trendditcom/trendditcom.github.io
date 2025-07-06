@@ -7,8 +7,8 @@
       <nav class="ml-auto flex items-center space-x-6 text-sm font-medium">
         <a href="/" class="transition-colors hover:text-foreground/80 text-foreground">Home</a>
         <a href="/blog" class="transition-colors hover:text-foreground/80 text-foreground/60">Blog</a>
-        <a href="#products" class="transition-colors hover:text-foreground/80 text-foreground/60">Products</a>
-        <a href="#advisory" class="transition-colors hover:text-foreground/80 text-foreground/60">Advisory</a>
+        <a href="/products" class="transition-colors hover:text-foreground/80 text-foreground/60">Products</a>
+        <a href="/advisory" class="transition-colors hover:text-foreground/80 text-foreground/60">Advisory</a>
       </nav>
     </div>
   </header>

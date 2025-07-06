@@ -1,0 +1,13 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Products from '@/components/Products.vue'
+---
+
+<Layout 
+  title="Products - Trenddit"
+  description="Explore Trenddit's AI-powered products for lean automation and knowledge management"
+>
+  <main class="container mx-auto px-4 py-8">
+    <Products client:load />
+  </main>
+</Layout>
