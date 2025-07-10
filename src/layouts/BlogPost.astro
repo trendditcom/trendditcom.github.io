@@ -19,14 +19,50 @@ export interface Props {
 }
 
 const { frontmatter } = Astro.props;
-const { title, date, author = 'Trenddit Team', excerpt, featuredImage, relatedPosts } = frontmatter;
+const { title, date, author = 'Trenddit Team', excerpt, featuredImage, relatedPosts, tags = [] } = frontmatter;
 
 // Get all blog posts for related posts functionality
 const allPosts = await Astro.glob('../pages/blog/*.{md,mdx}');
+
+// Create structured data for blog post
+const articleStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "description": excerpt || "",
+  "image": featuredImage ? new URL(featuredImage, Astro.site).toString() : new URL('/images/logo.png', Astro.site).toString(),
+  "datePublished": date ? new Date(date).toISOString() : new Date().toISOString(),
+  "dateModified": date ? new Date(date).toISOString() : new Date().toISOString(),
+  "author": {
+    "@type": "Person",
+    "name": author
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Trenddit",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://trenddit.com/images/logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": new URL(Astro.url.pathname, Astro.site).toString()
+  },
+  "keywords": tags.join(", ")
+};
 ---
 
-<Layout title={`${title} - Trenddit Blog`}>
+<Layout 
+  title={`${title} - Trenddit Blog`}
+  description={excerpt}
+  keywords={tags.join(', ')}
+  ogImage={featuredImage || '/images/logo.png'}
+  ogType="article"
+  author={author}
+>
   <Header client:load />
+  <script type="application/ld+json" set:html={JSON.stringify(articleStructuredData)} />
   <main class="min-h-screen">
     <article>
       {featuredImage ? (

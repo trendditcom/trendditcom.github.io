@@ -3,24 +3,89 @@ import '@styles/global.css';
 
 export interface Props {
   title: string;
+  description?: string;
+  keywords?: string;
+  ogImage?: string;
+  ogType?: string;
+  twitterCard?: string;
+  canonicalURL?: string;
+  author?: string;
 }
 
-const { title } = Astro.props;
+const {
+  title,
+  description = 'Trenddit offers products and advisory for lean AI automation. Transform your browsing into AI conversations with Trenddit Memo - a privacy-first Chrome extension for intelligent knowledge management.',
+  keywords = 'lean AI automation, AI advisory, Trenddit Memo, Chrome extension, AI conversations, knowledge management, AI-powered tools, multiple AI providers, privacy-first AI, intelligent browsing',
+  ogImage = '/images/logo.png',
+  ogType = 'website',
+  twitterCard = 'summary_large_image',
+  canonicalURL = new URL(Astro.url.pathname, Astro.site).toString(),
+  author = 'Trenddit Team'
+} = Astro.props;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Trenddit",
+  "description": "Trenddit offers products and advisory for lean AI automation",
+  "url": "https://trenddit.com",
+  "logo": "https://trenddit.com/images/logo.png",
+  "sameAs": [
+    "https://github.com/trendditcom"
+  ]
+};
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Trenddit offers products and advisory for lean AI automation" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content={author} />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site).toString()} />
+    <meta property="og:site_name" content="Trenddit" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content={twitterCard} />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(ogImage, Astro.site).toString()} />
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
+    
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#8B5CF6" />
+    <meta name="msapplication-TileColor" content="#8B5CF6" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <!-- Generator -->
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </head>
   <body>
     <slot />

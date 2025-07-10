@@ -1,0 +1,47 @@
+# Trenddit.com Robots.txt
+# https://www.robotstxt.org/robotstxt.html
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow administrative paths
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_astro/
+
+# Sitemap location
+Sitemap: https://trenddit.com/sitemap-index.xml
+
+# Crawl-delay for responsible crawling
+Crawl-delay: 1
+
+# Allow important bots faster access
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 0
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 0
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /

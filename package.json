@@ -12,6 +12,7 @@
     "generate-blog": "tsx src/scripts/generate-blog-posts.ts"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.4.1",
     "@astrojs/vue": "^5.1.0",
     "@heroicons/vue": "^2.1.5",
     "astro": "^5.11.0",

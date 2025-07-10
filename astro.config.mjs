@@ -1,11 +1,26 @@
 import { defineConfig } from 'astro/config';
 import vue from '@astrojs/vue';
+import sitemap from '@astrojs/sitemap';
 import { fileURLToPath, URL } from 'node:url';
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [
-    vue()
+    vue(),
+    sitemap({
+      // Custom sitemap configuration
+      filter: (page) => page !== 'https://trenddit.com/404',
+      customPages: [],
+      changefreq: 'weekly',
+      priority: 0.7,
+      lastmod: new Date(),
+      i18n: {
+        defaultLocale: 'en',
+        locales: {
+          en: 'en-US',
+        },
+      },
+    })
   ],
   site: 'https://trenddit.com',
   base: '/',

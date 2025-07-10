@@ -10,7 +10,13 @@ const sortedPosts = posts
   .sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
 ---
 
-<Layout title="Trenddit Blog - AI Automation Insights">
+<Layout 
+  title="Trenddit Blog - AI Automation Insights & Guides"
+  description="Explore the latest insights, use cases, and comprehensive guides on AI automation, Trenddit Memo features, enterprise AI strategies, and lean development practices. Learn from real-world implementations."
+  keywords="AI automation blog, Trenddit blog, AI insights, AI guides, AI use cases, Trenddit Memo tutorials, enterprise AI, lean automation, AI development, AI best practices, Chrome extension guides, AI workflow optimization"
+  ogImage="/images/logo.png"
+  ogType="website"
+>
   <Header client:load />
   <main class="min-h-screen">
     <div class="container mx-auto px-4 py-16">

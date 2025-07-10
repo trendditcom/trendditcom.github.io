@@ -35,3 +35,51 @@ Follow these guidelines when coding
 - use SOLID principles: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion
 - use DRY principles: reduce redundancy, improve maintainability, reusability, extensibility
 
+## SEO Best Practices
+IMPORTANT: Apply these SEO best practices for all content and pages on trenddit.com
+
+### Meta Tags & Structured Data
+- Every page MUST have unique, keyword-rich title (50-60 chars) and description (150-160 chars)
+- Include relevant keywords naturally in content, headings, and meta tags
+- Use the Layout.astro props to set custom title, description, keywords, ogImage for each page
+- Blog posts must include proper frontmatter: title, date, author, excerpt, tags, featuredImage
+- Ensure JSON-LD structured data is present (Organization schema on homepage, Article schema on blog posts)
+
+### Target Keywords
+Primary keywords to incorporate naturally:
+- "lean AI automation"
+- "AI advisory"
+- "Trenddit Memo"
+- "AI-powered tools"
+- "Chrome extension"
+- "knowledge management"
+- "multiple AI providers"
+- "privacy-first AI"
+
+### Content Guidelines
+- Write comprehensive, valuable content (minimum 1000 words for blog posts)
+- Use semantic HTML: proper heading hierarchy (H1 > H2 > H3)
+- Include internal links to related content
+- Add descriptive alt text for all images
+- Create clear, keyword-focused URLs (slugs)
+- Include call-to-actions (CTAs) in content
+
+### Technical SEO
+- Ensure all new pages are included in sitemap (automatic with current setup)
+- Verify canonical URLs are set correctly
+- Check that Open Graph and Twitter Card tags are populated
+- Test mobile responsiveness for all new content
+- Optimize images before uploading (compress, proper dimensions)
+
+### Content Creation Checklist
+When creating new content:
+1. Research target keywords for the topic
+2. Create compelling title with primary keyword
+3. Write meta description that includes keywords and CTA
+4. Structure content with clear headings
+5. Include relevant internal links
+6. Add featured image with descriptive alt text
+7. Set appropriate tags and categories
+8. Preview social sharing appearance
+9. Run build to ensure sitemap updates
+
