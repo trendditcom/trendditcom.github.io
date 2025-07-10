@@ -1,0 +1,30 @@
+# Trenddit
+
+> Lean AI automation products and advisory services for modern businesses
+
+Trenddit offers products and advisory services focused on lean AI automation. Our flagship product is Trenddit Memo, a privacy-first Chrome extension that provides AI-powered knowledge management across multiple AI providers.
+
+## Products
+
+- [Trenddit Memo](https://github.com/trendditcom/trenddit-memo): Privacy-first Chrome extension for AI-powered knowledge management with support for multiple AI providers
+- Advisory Services: Lean AI automation consulting for businesses
+
+## Documentation
+
+- [Trenddit Memo README](https://github.com/trendditcom/trenddit-memo/blob/master/README.md): Complete documentation for our flagship Chrome extension
+- [Website Repository](https://github.com/trendditcom/trendditcom.github.io): Source code for this marketing website built with Astro
+
+## Key Features
+
+- Privacy-first approach to AI tools
+- Multi-provider AI support
+- Chrome extension for seamless integration
+- Lean automation methodology
+- Knowledge management capabilities
+
+## Technology Stack
+
+- Astro 5.11 for fast, content-driven website
+- Vue.js 3 for interactive components
+- Tailwind CSS 4.11 for utility-first styling
+- Hosted on GitHub Pages
