@@ -22,7 +22,7 @@ export default defineConfig({
       },
     })
   ],
-  site: 'https://trenddit.com',
+  site: 'https://www.trenddit.com',
   base: '/',
   output: 'static',
   vite: {
