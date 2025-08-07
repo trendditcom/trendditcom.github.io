@@ -3,6 +3,7 @@ import Layout from '@layouts/Layout.astro';
 import Header from '@components/Header.vue';
 import ProductsHero from '@components/ProductsHero.vue';
 import Products from '@components/Products.vue';
+import TrendditClientBlogShowcase from '@components/TrendditClientBlogShowcase.vue';
 import ProductsBlogShowcase from '@components/ProductsBlogShowcase.vue';
 import Footer from '@components/Footer.vue';
 ---
@@ -18,6 +19,7 @@ import Footer from '@components/Footer.vue';
   <main>
     <ProductsHero client:load />
     <Products client:load />
+    <TrendditClientBlogShowcase client:load />
     <ProductsBlogShowcase client:load />
   </main>
   <Footer client:load />

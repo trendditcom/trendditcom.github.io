@@ -162,12 +162,55 @@ const loadLatestPosts = async () => {
       })
     );
     
-    // Filter out failed loads and sort by date (most recent first)
-    const validPosts = (loadedPosts.filter(post => post !== null) as BlogPost[])
-      .sort((a, b) => new Date(b.date!).getTime() - new Date(a.date!).getTime());
+    // Filter out failed loads
+    const validPosts = loadedPosts.filter(post => post !== null) as BlogPost[];
     
-    // Get the 5 most recent posts
-    featuredPosts.value = validPosts.slice(0, 5);
+    // Prioritize posts: 2 Trenddit Client, 2 AI Agents/Workflow, 1 Trenddit Memo
+    const trendditClientPosts = validPosts
+      .filter(post => post.tags.includes('Trenddit Client'))
+      .sort((a, b) => new Date(b.date!).getTime() - new Date(a.date!).getTime())
+      .slice(0, 2);
+    
+    const agentsWorkflowPosts = validPosts
+      .filter(post => 
+        !post.tags.includes('Trenddit Client') &&
+        (post.tags.includes('AI Agents') || 
+         post.tags.includes('Code Generation') || 
+         post.tags.includes('Lean Workflows') ||
+         post.tags.includes('enterprise') ||
+         post.tags.includes('ai-development'))
+      )
+      .sort((a, b) => new Date(b.date!).getTime() - new Date(a.date!).getTime())
+      .slice(0, 2);
+    
+    const trendditMemoPosts = validPosts
+      .filter(post => 
+        !post.tags.includes('Trenddit Client') &&
+        (post.tags.includes('Trenddit Memo') || post.tags.includes('trenddit-memo'))
+      )
+      .sort((a, b) => new Date(b.date!).getTime() - new Date(a.date!).getTime())
+      .slice(0, 1);
+    
+    // Combine in the desired order
+    const prioritizedPosts = [
+      ...trendditClientPosts,
+      ...agentsWorkflowPosts,
+      ...trendditMemoPosts
+    ];
+    
+    // Fill remaining slots with other posts if needed
+    const remainingSlots = 5 - prioritizedPosts.length;
+    if (remainingSlots > 0) {
+      const usedSlugs = new Set(prioritizedPosts.map(p => p.slug));
+      const otherPosts = validPosts
+        .filter(post => !usedSlugs.has(post.slug))
+        .sort((a, b) => new Date(b.date!).getTime() - new Date(a.date!).getTime())
+        .slice(0, remainingSlots);
+      
+      prioritizedPosts.push(...otherPosts);
+    }
+    
+    featuredPosts.value = prioritizedPosts.slice(0, 5);
 
     // Fallback posts if no posts loaded
     if (featuredPosts.value.length === 0) {
