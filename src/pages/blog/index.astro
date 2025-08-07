@@ -4,10 +4,26 @@ import Header from '@components/Header.vue';
 import Footer from '@components/Footer.vue';
 import BlogList from '@components/BlogList.vue';
 
-const posts = await Astro.glob('./*.{md,mdx}');
-const sortedPosts = posts
+const posts = await import.meta.glob('./*.{md,mdx}', { eager: true });
+
+// Convert glob imports to array format and filter/sort
+const postArray = Object.entries(posts).map(([path, post]) => ({ ...post, url: path.replace('./', '/blog/').replace(/\.mdx?$/, '') }));
+
+// Custom sorting function to prioritize Trenddit Client posts
+const sortedPosts = postArray
   .filter(post => post.url !== '/blog/')
-  .sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
+  .sort((a, b) => {
+    // Check if posts are Trenddit Client posts
+    const aIsTrendditClient = a.frontmatter.tags?.includes('Trenddit Client') || false;
+    const bIsTrendditClient = b.frontmatter.tags?.includes('Trenddit Client') || false;
+    
+    // Trenddit Client posts get priority
+    if (aIsTrendditClient && !bIsTrendditClient) return -1;
+    if (!aIsTrendditClient && bIsTrendditClient) return 1;
+    
+    // Within the same priority group, sort by date (newest first)
+    return new Date(b.frontmatter.date) - new Date(a.frontmatter.date);
+  });
 ---
 
 <Layout 

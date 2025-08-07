@@ -22,7 +22,7 @@ const { frontmatter } = Astro.props;
 const { title, date, author = 'Trenddit Team', excerpt, featuredImage, relatedPosts, tags = [] } = frontmatter;
 
 // Get all blog posts for related posts functionality
-const allPosts = await Astro.glob('../pages/blog/*.{md,mdx}');
+const allPosts = await import.meta.glob('../pages/blog/*.{md,mdx}', { eager: true });
 
 // Create structured data for blog post
 const articleStructuredData = {
@@ -156,7 +156,7 @@ const articleStructuredData = {
           <RelatedPosts 
             client:load 
             relatedPostSlugs={relatedPosts}
-            allPosts={allPosts}
+            allPosts={Object.entries(allPosts).map(([path, post]) => ({ ...post, url: path.replace('../pages', '').replace(/\.mdx?$/, '') }))}
           />
           
           <div class="mt-12 pt-8 border-t">

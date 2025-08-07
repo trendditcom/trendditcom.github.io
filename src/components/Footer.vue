@@ -5,26 +5,31 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
         <!-- Column 1: Products & Services -->
         <div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-4">Products & Services</h3>
+          <h3 class="text-lg font-semibold text-gray-900 mb-4">AI-Powered Tools & Services</h3>
           <ul class="space-y-3">
             <li>
               <a href="/products" class="text-gray-600 hover:text-gray-900 transition-colors">
-                AI Automation Products
+                Lean AI Automation Products
               </a>
             </li>
             <li>
               <a href="/advisory" class="text-gray-600 hover:text-gray-900 transition-colors">
-                Lean AI Advisory
+                Enterprise AI Advisory
               </a>
             </li>
             <li>
               <a href="https://github.com/trendditcom/trenddit-memo" target="_blank" class="text-gray-600 hover:text-gray-900 transition-colors">
-                Trenddit Memo Chrome Extension
+                Trenddit Memo: Privacy-First Chrome Extension
               </a>
             </li>
             <li>
-              <a href="/blog?tag=use-cases" class="text-gray-600 hover:text-gray-900 transition-colors">
-                Use Cases & Examples
+              <a href="/blog/introducing-trenddit-memo-ai-browsing" class="text-gray-600 hover:text-gray-900 transition-colors">
+                AI Browsing Innovation
+              </a>
+            </li>
+            <li>
+              <a href="/blog/trenddit-memo-multi-ai-providers" class="text-gray-600 hover:text-gray-900 transition-colors">
+                Multiple AI Providers Integration
               </a>
             </li>
           </ul>
@@ -32,26 +37,31 @@
 
         <!-- Column 2: Resources & Content -->
         <div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-4">Resources & Content</h3>
+          <h3 class="text-lg font-semibold text-gray-900 mb-4">AI Development Resources</h3>
           <ul class="space-y-3">
             <li>
               <a href="/blog" class="text-gray-600 hover:text-gray-900 transition-colors">
-                Blog & Insights
+                AI Automation Blog & Insights
               </a>
             </li>
             <li>
-              <a href="/blog?tag=research" class="text-gray-600 hover:text-gray-900 transition-colors">
-                AI Research & Trends
+              <a href="/blog/ai-automation-best-practices" class="text-gray-600 hover:text-gray-900 transition-colors">
+                AI Development Best Practices
               </a>
             </li>
             <li>
-              <a href="/blog?tag=guides" class="text-gray-600 hover:text-gray-900 transition-colors">
-                User Guides & Tutorials
+              <a href="/blog/lean-ai-stack-selection" class="text-gray-600 hover:text-gray-900 transition-colors">
+                Lean AI Technology Stack Guide
               </a>
             </li>
             <li>
-              <a href="/blog?tag=knowledge-management" class="text-gray-600 hover:text-gray-900 transition-colors">
-                Knowledge Management
+              <a href="/blog/enterprise-ai-development-workflows" class="text-gray-600 hover:text-gray-900 transition-colors">
+                Enterprise AI Workflows
+              </a>
+            </li>
+            <li>
+              <a href="/blog/vibe-coding-workflow-fundamentals" class="text-gray-600 hover:text-gray-900 transition-colors">
+                AI-Powered Development Workflows
               </a>
             </li>
           </ul>
@@ -63,22 +73,27 @@
           <ul class="space-y-3">
             <li>
               <a href="/#about" class="text-gray-600 hover:text-gray-900 transition-colors">
-                About Trenddit
+                About Trenddit: Lean AI Advisory
               </a>
             </li>
             <li>
               <a href="/#contact" class="text-gray-600 hover:text-gray-900 transition-colors">
-                Contact Us
+                Contact AI Automation Experts
               </a>
             </li>
             <li>
               <a href="https://github.com/trendditcom" target="_blank" class="text-gray-600 hover:text-gray-900 transition-colors">
-                GitHub Development
+                Open Source AI Development
               </a>
             </li>
             <li>
-              <a href="/" class="text-gray-600 hover:text-gray-900 transition-colors">
-                Privacy-First AI Tools
+              <a href="/blog/trenddit-memo-privacy-first-design" class="text-gray-600 hover:text-gray-900 transition-colors">
+                Privacy-First AI Architecture
+              </a>
+            </li>
+            <li>
+              <a href="/blog/coding-with-claude-code" class="text-gray-600 hover:text-gray-900 transition-colors">
+                AI Agents Development Guide
               </a>
             </li>
           </ul>

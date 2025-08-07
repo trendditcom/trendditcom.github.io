@@ -46,8 +46,19 @@ const activeTag = ref('')
 const availableTags = ref([])
 
 onMounted(() => {
-  // Extract unique classification tags
-  const classificationTags = ['Trenddit Memo', 'AI Agents', 'Code Generation', 'Lean Workflows']
+  // Extract unique classification tags including new Trenddit Client tags
+  const classificationTags = [
+    'Trenddit Client', 
+    'Trenddit Memo', 
+    'AI Intelligence',
+    'Enterprise Technology',
+    'Enterprise Strategy',
+    'AI Advisory',
+    'AI Agents', 
+    'Code Generation', 
+    'Lean Workflows',
+    'User Guide'
+  ]
   availableTags.value = classificationTags
 
   // Check URL for tag parameter

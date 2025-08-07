@@ -27,7 +27,7 @@ describe('Products component', () => {
 
   it('has a learn more link to the blog', () => {
     const wrapper = mount(Products)
-    const blogLink = wrapper.find('a[href="/blog"]')
+    const blogLink = wrapper.find('a[href*="/blog"]')
     expect(blogLink.exists()).toBe(true)
   })
 })

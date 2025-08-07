@@ -154,4 +154,121 @@ describe('Blog post generation', () => {
       expect(result.tags).toContain('automation')
     })
   })
+
+  describe('Trenddit Client blog posts', () => {
+    it('should create AI-Driven Trend Analysis Research blog post', async () => {
+      const blogData = {
+        title: 'AI-Driven Trend Analysis: Enterprise Intelligence Systems for Technology Decisions',
+        slug: 'ai-driven-trend-analysis-enterprise-intelligence',
+        excerpt: 'Discover how AI-first intelligence systems transform enterprise technology adoption decisions through multi-agent reasoning and predictive analysis.',
+        content: '# AI-Driven Trend Analysis\n\nEnterprise leaders face unprecedented challenges...',
+        author: 'Trenddit Team',
+        date: '2025-01-15',
+        tags: ['Trenddit Client', 'AI Intelligence', 'Enterprise Technology', 'Trend Analysis'],
+        featuredImage: '/images/blog/trends-intelligence-cards.png'
+      }
+
+      const result = await createBlogPost(blogData, blogDir)
+
+      expect(result.success).toBe(true)
+      
+      const content = await fs.readFile(result.filePath, 'utf-8')
+      expect(content).toContain('layout: "@/layouts/BlogPost.astro"')
+      expect(content).toContain('title: "AI-Driven Trend Analysis: Enterprise Intelligence Systems for Technology Decisions"')
+      expect(content).toContain('tags: ["Trenddit Client", "AI Intelligence", "Enterprise Technology", "Trend Analysis"]')
+      expect(content).toContain('featuredImage: "/images/blog/trends-intelligence-cards.png"')
+      expect(content).toContain('multi-agent')
+      expect(content).toContain('enterprise')
+    })
+
+    it('should create Enterprise AI Advisory Platform blog post', async () => {
+      const blogData = {
+        title: 'Enterprise AI Advisory Platform: Transforming Technology Investment Decisions',
+        slug: 'enterprise-ai-advisory-platform-technology-decisions',
+        excerpt: 'How Trenddit Client revolutionizes enterprise technology adoption with AI-first intelligence and predictive forecasting.',
+        content: '# Enterprise AI Advisory Platform\n\nTechnology decision-making has evolved...',
+        author: 'Trenddit Team',
+        date: '2025-01-16',
+        tags: ['Trenddit Client', 'Enterprise Strategy', 'AI Advisory', 'Technology Investment'],
+        featuredImage: '/images/blog/trenddit-workflow.png'
+      }
+
+      const result = await createBlogPost(blogData, blogDir)
+
+      expect(result.success).toBe(true)
+      
+      const content = await fs.readFile(result.filePath, 'utf-8')
+      expect(content).toContain('Enterprise Strategy')
+      expect(content).toContain('AI Advisory')
+      expect(content).toContain('Technology Investment')
+      expect(content).toContain('enterprise')
+      expect(content).toContain('technology adoption')
+    })
+
+    it('should create Getting Started guide blog post', async () => {
+      const blogData = {
+        title: 'Getting Started with Trenddit Client: AI-Powered Enterprise Intelligence',
+        slug: 'getting-started-trenddit-client-enterprise-intelligence',
+        excerpt: 'Complete step-by-step guide to implementing Trenddit Client for enterprise technology decision-making.',
+        content: '# Getting Started with Trenddit Client\n\nThis comprehensive guide...',
+        author: 'Trenddit Team',
+        date: '2025-01-17',
+        tags: ['Trenddit Client', 'Getting Started', 'User Guide', 'Implementation'],
+        featuredImage: '/images/blog/personalized-trends.png'
+      }
+
+      const result = await createBlogPost(blogData, blogDir)
+
+      expect(result.success).toBe(true)
+      
+      const content = await fs.readFile(result.filePath, 'utf-8')
+      expect(content).toContain('Getting Started')
+      expect(content).toContain('User Guide')
+      expect(content).toContain('Implementation')
+      expect(content).toContain('step-by-step')
+      expect(content).toContain('comprehensive')
+    })
+
+    it('should ensure all blog posts have professional advisory tone', async () => {
+      const blogPosts = [
+        'ai-driven-trend-analysis-enterprise-intelligence',
+        'enterprise-ai-advisory-platform-technology-decisions',
+        'getting-started-trenddit-client-enterprise-intelligence'
+      ]
+
+      for (const slug of blogPosts) {
+        const filePath = path.join('src/pages/blog', `${slug}.md`)
+        const exists = await fs.access(filePath).then(() => true).catch(() => false)
+        
+        if (exists) {
+          const content = await fs.readFile(filePath, 'utf-8')
+          
+          // Should not contain personal pronouns typical of personal tone
+          expect(content).not.toMatch(/\bI\b/)
+          expect(content).not.toMatch(/\bmy\b/)
+          expect(content).not.toMatch(/\bme\b/)
+          
+          // Should contain professional advisory language
+          expect(content.toLowerCase()).toMatch(/recommend|strategy|enterprise|professional|advisory|guidance/)
+        }
+      }
+    })
+
+    it('should verify all required images are copied to blog images folder', async () => {
+      const requiredImages = [
+        'trends-intelligence-cards.png',
+        'trends-intelligence-rows.png',
+        'personalized-trends.png',
+        'trenddit-workflow.png',
+        'needs-discovery-company.png',
+        'generate-solutions.png'
+      ]
+
+      for (const imageName of requiredImages) {
+        const imagePath = path.join('public/images/blog', imageName)
+        const exists = await fs.access(imagePath).then(() => true).catch(() => false)
+        expect(exists).toBe(true)
+      }
+    })
+  })
 })

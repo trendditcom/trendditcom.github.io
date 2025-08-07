@@ -47,10 +47,15 @@ IMPORTANT: Apply these SEO best practices for all content and pages on trenddit.
 
 ### Target Keywords
 Primary keywords to incorporate naturally:
-- "lean AI automation"
+- "AI agents"
+- "AI workflows"
 - "AI advisory"
-- "Trenddit Memo"
+- "lean AI automation"
 - "AI-powered tools"
+- "Treddit Client"
+- "Trenddit Memo"
+- "Web app"
+- "SaaS"
 - "Chrome extension"
 - "knowledge management"
 - "multiple AI providers"

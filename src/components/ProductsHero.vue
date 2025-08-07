@@ -16,11 +16,11 @@
         <!-- Glassmorphism Card for Description -->
         <div class="backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl p-8 mb-8 shadow-2xl animate-slide-up max-w-4xl mx-auto">
           <p class="text-xl md:text-2xl text-white/90 leading-relaxed font-light mb-6">
-            AI-Powered Tools for Modern Knowledge Management
+            AI-First Intelligence Platform for Enterprise Technology Decisions
           </p>
           
           <p class="text-lg text-white/80 leading-relaxed font-light max-w-3xl mx-auto">
-            Discover our suite of intelligent products designed to streamline your workflow, enhance productivity, and transform how you interact with information.
+            Transform how your enterprise discovers, evaluates, and implements emerging technologies with intelligent trend analysis, predictive forecasting, and evidence-based strategic recommendations.
           </p>
           
           <!-- Action Buttons -->
@@ -28,15 +28,15 @@
             <Button 
               size="lg" 
               as="a" 
-              href="https://github.com/trendditcom/trenddit-memo" 
+              href="https://github.com/trendditcom/trenddit-client" 
               target="_blank" 
               class="bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30 transition-all duration-300 px-8 py-4 text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105"
             >
               <span class="flex items-center gap-3">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                 </svg>
-                Get Trenddit Memo
+                Get Trenddit Client
               </span>
             </Button>
             
@@ -65,8 +65,8 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
               </svg>
             </div>
-            <h3 class="text-lg font-semibold text-white mb-2">Content Capture</h3>
-            <p class="text-white/70 text-sm">Seamlessly capture and organize web content</p>
+            <h3 class="text-lg font-semibold text-white mb-2">Multi-Agent Intelligence</h3>
+            <p class="text-white/70 text-sm">Specialized AI agents for market and business analysis</p>
           </div>
           
           <div class="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
@@ -75,8 +75,8 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c1.21 0 2.9.57 4 1.68C17.11 5.78 17.89 7.57 18 9h1l-1 5.5c-.1 1.43-.9 2.22-2 2.5l-1-.5c-1.1.28-1.9 1.07-2 2.5L12 19c-.1-1.43-.9-2.22-2-2.5l-1 .5c-1.1-.28-1.9-1.07-2-2.5L6 9h1c.11-1.43.89-3.22 2-4.32C10.1 3.57 11.79 3 13 3z"></path>
               </svg>
             </div>
-            <h3 class="text-lg font-semibold text-white mb-2">Smart Tagging</h3>
-            <p class="text-white/70 text-sm">Automatic organization with intelligent tags</p>
+            <h3 class="text-lg font-semibold text-white mb-2">Predictive Forecasting</h3>
+            <p class="text-white/70 text-sm">Know exactly when trends will impact your industry</p>
           </div>
           
           <div class="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
@@ -85,8 +85,8 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
               </svg>
             </div>
-            <h3 class="text-lg font-semibold text-white mb-2">AI Chat</h3>
-            <p class="text-white/70 text-sm">Chat with your knowledge base using AI</p>
+            <h3 class="text-lg font-semibold text-white mb-2">Strategic Decision Support</h3>
+            <p class="text-white/70 text-sm">Evidence-based recommendations for technology adoption</p>
           </div>
         </div>
       </div>
