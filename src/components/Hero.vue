@@ -11,18 +11,18 @@
         <!-- Main Title with Epic Typography -->
         <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-8 leading-tight animate-fade-in tracking-tight">
           <span class="bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent drop-shadow-2xl">
-            Trenddit Client
+            Moments
           </span>
         </h1>
         
         <!-- Glassmorphism Card for Description -->
         <div class="backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl p-8 mb-8 shadow-2xl animate-slide-up max-w-4xl mx-auto">
           <p class="text-xl md:text-2xl text-white/90 leading-relaxed font-light mb-6">
-            AI-first intelligence platform for enterprise technology decisions
+            AI-Powered Business Intelligence for the AI Industry
           </p>
           
           <p class="text-lg text-white/80 leading-relaxed font-light max-w-3xl mx-auto">
-            Transform how your team discovers, evaluates, and implements emerging technologies with intelligent trend analysis, predictive forecasting, and evidence-based recommendations.
+            Transform overwhelming industry information into strategic insights. Automatically discover, analyze, and connect pivotal moments across 100+ AI companies and enterprise disruption patterns with specialized AI agents and local-first architecture.
           </p>
           
           <!-- Action Buttons -->
@@ -30,7 +30,7 @@
             <Button 
               size="lg" 
               as="a" 
-              href="https://github.com/trendditcom/trenddit-client" 
+              href="https://github.com/trendditcom/moments" 
               target="_blank" 
               data-testid="cta-download"
               class="bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30 transition-all duration-300 px-8 py-4 text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105"
@@ -39,7 +39,7 @@
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                 </svg>
-                Get Trenddit Client
+                Get Moments
               </span>
             </Button>
             
@@ -68,8 +68,8 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
               </svg>
             </div>
-            <h3 class="text-lg font-semibold text-white mb-2">Multi-Agent Intelligence</h3>
-            <p class="text-white/70 text-sm">Specialized AI agents for market, business, and solution analysis</p>
+            <h3 class="text-lg font-semibold text-white mb-2">Multi-Agent Processing</h3>
+            <p class="text-white/70 text-sm">Specialized AI agents for content analysis, classification, and correlation discovery</p>
           </div>
           
           <div class="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
@@ -78,8 +78,8 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c1.21 0 2.9.57 4 1.68C17.11 5.78 17.89 7.57 18 9h1l-1 5.5c-.1 1.43-.9 2.22-2 2.5l-1-.5c-1.1.28-1.9 1.07-2 2.5L12 19c-.1-1.43-.9-2.22-2-2.5l-1 .5c-1.1-.28-1.9-1.07-2-2.5L6 9h1c.11-1.43.89-3.22 2-4.32C10.1 3.57 11.79 3 13 3z"></path>
               </svg>
             </div>
-            <h3 class="text-lg font-semibold text-white mb-2">Predictive Forecasting</h3>
-            <p class="text-white/70 text-sm">Know exactly when trends will impact your industry</p>
+            <h3 class="text-lg font-semibold text-white mb-2">Smart Correlation Discovery</h3>
+            <p class="text-white/70 text-sm">Automatically discover relationships between seemingly unrelated business events</p>
           </div>
           
           <div class="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
@@ -88,8 +88,8 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
               </svg>
             </div>
-            <h3 class="text-lg font-semibold text-white mb-2">Real-Time Learning</h3>
-            <p class="text-white/70 text-sm">Every interaction improves recommendations for all users</p>
+            <h3 class="text-lg font-semibold text-white mb-2">Local-First Architecture</h3>
+            <p class="text-white/70 text-sm">Your data stays on your systems with complete privacy and control</p>
           </div>
         </div>
         

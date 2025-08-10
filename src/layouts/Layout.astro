@@ -14,8 +14,8 @@ export interface Props {
 
 const {
   title,
-  description = 'Trenddit offers products and advisory for lean AI automation. Transform your browsing into AI conversations with Trenddit Memo - a privacy-first Chrome extension for intelligent knowledge management.',
-  keywords = 'lean AI automation, AI advisory, Trenddit Memo, Chrome extension, AI conversations, knowledge management, AI-powered tools, multiple AI providers, privacy-first AI, intelligent browsing',
+  description = 'AI-powered business intelligence platform featuring Moments for enterprise intelligence. Transform information overload into strategic insights with multi-agent systems, smart correlation discovery, and competitive analysis capabilities.',
+  keywords = 'Moments, AI business intelligence, multi-agent systems, business intelligence platform, competitive analysis, AI-powered insights, Trenddit Client, Trenddit Memo, enterprise intelligence, strategic decision-making, lean AI automation, AI advisory',
   ogImage = '/android-chrome-512x512.png',
   ogType = 'website',
   twitterCard = 'summary_large_image',
@@ -27,11 +27,31 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Trenddit",
-  "description": "Trenddit offers products and advisory for lean AI automation",
+  "description": "AI-powered business intelligence platform featuring Moments for enterprise intelligence, multi-agent systems, and competitive analysis",
   "url": "https://trenddit.com",
   "logo": "https://trenddit.com/android-chrome-512x512.png",
   "sameAs": [
     "https://github.com/trendditcom"
+  ],
+  "products": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Moments",
+      "description": "AI-powered business intelligence platform with multi-agent processing and smart correlation discovery",
+      "url": "https://github.com/trendditcom/moments"
+    },
+    {
+      "@type": "SoftwareApplication", 
+      "name": "Trenddit Client",
+      "description": "AI-first enterprise intelligence platform for technology decision-making",
+      "url": "https://github.com/trendditcom/trenddit-client"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Trenddit Memo", 
+      "description": "Chrome extension for AI-powered knowledge management and intelligent conversations",
+      "url": "https://github.com/trendditcom/trenddit-memo"
+    }
   ]
 };
 ---
@@ -67,6 +87,10 @@ const structuredData = {
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(ogImage, Astro.site).toString()} />
+    
+    <!-- Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />

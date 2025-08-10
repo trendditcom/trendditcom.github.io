@@ -3,22 +3,24 @@ import Layout from '@layouts/Layout.astro';
 import Header from '@components/Header.vue';
 import ProductsHero from '@components/ProductsHero.vue';
 import Products from '@components/Products.vue';
+import MomentsBlogShowcase from '@components/MomentsBlogShowcase.vue';
 import TrendditClientBlogShowcase from '@components/TrendditClientBlogShowcase.vue';
 import ProductsBlogShowcase from '@components/ProductsBlogShowcase.vue';
 import Footer from '@components/Footer.vue';
 ---
 
 <Layout 
-  title="Products - Trenddit Client | AI-First Enterprise Intelligence Platform"
-  description="Discover Trenddit Client - the flagship AI-first intelligence platform for enterprise technology decisions, featuring multi-agent analysis, predictive forecasting, and strategic recommendations. Plus Trenddit Memo Chrome extension for knowledge management."
-  keywords="Trenddit Client, enterprise AI intelligence, technology decision-making, AI-first platform, multi-agent intelligence, predictive forecasting, enterprise technology strategy, business intelligence, trend analysis, Trenddit Memo, AI tools, strategic advisory, lean automation"
-  ogImage="/images/blog/trends-intelligence-cards.png"
+  title="Products - Moments | AI-Powered Business Intelligence Platform"
+  description="Discover Moments - flagship AI-powered business intelligence platform with multi-agent processing, smart correlation discovery, and local-first architecture."
+  keywords="Moments, AI business intelligence, multi-agent systems, business intelligence platform, AI-powered insights, smart correlation, local-first AI, Trenddit Client, Trenddit Memo, enterprise intelligence, competitive analysis, strategic decision-making"
+  ogImage="/images/blog/moments.png"
   ogType="website"
 >
   <Header client:load />
   <main>
     <ProductsHero client:load />
     <Products client:load />
+    <MomentsBlogShowcase client:load />
     <TrendditClientBlogShowcase client:load />
     <ProductsBlogShowcase client:load />
   </main>

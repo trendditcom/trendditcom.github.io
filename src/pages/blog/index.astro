@@ -9,27 +9,27 @@ const posts = await import.meta.glob('./*.{md,mdx}', { eager: true });
 // Convert glob imports to array format and filter/sort
 const postArray = Object.entries(posts).map(([path, post]) => ({ ...post, url: path.replace('./', '/blog/').replace(/\.mdx?$/, '') }));
 
-// Custom sorting function to prioritize Trenddit Client posts
+// Custom sorting function to prioritize Moments posts
 const sortedPosts = postArray
   .filter(post => post.url !== '/blog/')
   .sort((a, b) => {
-    // Check if posts are Trenddit Client posts
-    const aIsTrendditClient = a.frontmatter.tags?.includes('Trenddit Client') || false;
-    const bIsTrendditClient = b.frontmatter.tags?.includes('Trenddit Client') || false;
+    // Check if posts are Moments posts
+    const aIsMoments = a.frontmatter.tags?.includes('Moments') || false;
+    const bIsMoments = b.frontmatter.tags?.includes('Moments') || false;
     
-    // Trenddit Client posts get priority
-    if (aIsTrendditClient && !bIsTrendditClient) return -1;
-    if (!aIsTrendditClient && bIsTrendditClient) return 1;
+    // Moments posts get priority
+    if (aIsMoments && !bIsMoments) return -1;
+    if (!aIsMoments && bIsMoments) return 1;
     
-    // Within the same priority group, sort by date (newest first)
-    return new Date(b.frontmatter.date) - new Date(a.frontmatter.date);
+    // Within the same priority group, sort alphabetically by title for consistency
+    return a.frontmatter.title?.localeCompare(b.frontmatter.title || '') || 0;
   });
 ---
 
 <Layout 
-  title="Trenddit Blog - AI Automation Insights & Guides"
-  description="Explore the latest insights, use cases, and comprehensive guides on AI automation, Trenddit Memo features, enterprise AI strategies, and lean development practices. Learn from real-world implementations."
-  keywords="AI automation blog, Trenddit blog, AI insights, AI guides, AI use cases, Trenddit Memo tutorials, enterprise AI, lean automation, AI development, AI best practices, Chrome extension guides, AI workflow optimization"
+  title="Trenddit Blog - AI Business Intelligence Insights & Guides"
+  description="Explore AI-powered business intelligence insights, Moments platform features, multi-agent systems, and enterprise AI strategies and implementations."
+  keywords="AI business intelligence blog, Moments platform, AI insights, business intelligence guides, multi-agent systems, enterprise AI, competitive intelligence, AI-powered research, business intelligence tools, AI automation"
   ogImage="/images/logo.png"
   ogType="website"
 >
@@ -39,7 +39,7 @@ const sortedPosts = postArray
       <div class="mx-auto max-w-4xl">
         <h1 class="text-4xl font-bold mb-4">Blog</h1>
         <p class="text-lg text-gray-600 mb-12">
-          Insights, use cases, and guides for AI automation
+          Insights, use cases, and guides for AI-powered business intelligence
         </p>
         
         <BlogList client:load posts={sortedPosts} />
