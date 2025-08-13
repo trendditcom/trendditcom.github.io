@@ -8,7 +8,7 @@
             Latest from Our Blog
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Discover insights on AI automation, development workflows, and lean technology solutions
+            Discover insights on AI business intelligence, dashboard analytics, knowledge graphs, and strategic decision-making
           </p>
         </div>
       </div>
@@ -165,27 +165,32 @@ const loadLatestPosts = async () => {
     // Filter out failed loads
     const validPosts = loadedPosts.filter(post => post !== null) as BlogPost[];
     
-    // Prioritize posts: 2 Trenddit Client, 2 AI Agents/Workflow, 1 Trenddit Memo
-    const trendditClientPosts = validPosts
-      .filter(post => post.tags.includes('Trenddit Client'))
+    // Prioritize posts: 2 Moments Dashboard, 2 Trenddit Client/AI Intelligence, 1 Trenddit Memo
+    const momentsDashboardPosts = validPosts
+      .filter(post => 
+        post.tags.includes('Moments') || 
+        post.tags.includes('Dashboard') || 
+        post.tags.includes('Knowledge Graph') ||
+        post.tags.includes('Analytics') ||
+        post.tags.includes('Correlation Analysis') ||
+        post.tags.includes('Factor Analysis'))
       .sort((a, b) => new Date(b.date!).getTime() - new Date(a.date!).getTime())
       .slice(0, 2);
     
-    const agentsWorkflowPosts = validPosts
+    const trendditClientPosts = validPosts
       .filter(post => 
-        !post.tags.includes('Trenddit Client') &&
-        (post.tags.includes('AI Agents') || 
-         post.tags.includes('Code Generation') || 
-         post.tags.includes('Lean Workflows') ||
-         post.tags.includes('enterprise') ||
-         post.tags.includes('ai-development'))
+        !momentsDashboardPosts.some(mp => mp.slug === post.slug) &&
+        (post.tags.includes('Trenddit Client') || 
+         post.tags.includes('AI Intelligence') ||
+         post.tags.includes('Business Intelligence'))
       )
       .sort((a, b) => new Date(b.date!).getTime() - new Date(a.date!).getTime())
       .slice(0, 2);
     
     const trendditMemoPosts = validPosts
       .filter(post => 
-        !post.tags.includes('Trenddit Client') &&
+        !momentsDashboardPosts.some(mp => mp.slug === post.slug) &&
+        !trendditClientPosts.some(tc => tc.slug === post.slug) &&
         (post.tags.includes('Trenddit Memo') || post.tags.includes('trenddit-memo'))
       )
       .sort((a, b) => new Date(b.date!).getTime() - new Date(a.date!).getTime())
@@ -193,8 +198,8 @@ const loadLatestPosts = async () => {
     
     // Combine in the desired order
     const prioritizedPosts = [
+      ...momentsDashboardPosts,
       ...trendditClientPosts,
-      ...agentsWorkflowPosts,
       ...trendditMemoPosts
     ];
     
@@ -216,36 +221,36 @@ const loadLatestPosts = async () => {
     if (featuredPosts.value.length === 0) {
       featuredPosts.value = [
         {
-          slug: 'coding-with-claude-code',
-          title: 'Coding with Claude Code: A Developer\'s Guide',
-          excerpt: 'Learn how to maximize your productivity using Claude Code for AI-assisted development workflows.',
-          featuredImage: '/images/blog/vibe-coding-workflows.png',
-          author: 'Trenddit Team',
-          tags: ['ai', 'development', 'tools']
+          slug: 'moments-dashboard-three-tier-analytics',
+          title: 'Moments Dashboard: Three-Tier Analytics for AI Business Intelligence',
+          excerpt: 'Transform AI industry data into strategic insights with Moments three-tier analytics dashboard featuring real-time KPIs, correlation intelligence, and factor analysis.',
+          featuredImage: '/images/blog/dashboard.png',
+          author: 'Trenddit Advisory Team',
+          tags: ['Moments', 'Dashboard', 'Analytics']
         },
         {
-          slug: 'ai-automation-best-practices',
-          title: 'AI Automation Best Practices for Modern Teams',
-          excerpt: 'Essential practices for implementing AI automation that enhances productivity while maintaining code quality.',
-          featuredImage: '/images/blog/vibe-coding-workflows.png',
-          author: 'Trenddit Team',
-          tags: ['ai', 'automation', 'best-practices']
+          slug: 'moments-knowledge-graph-network-visualization',
+          title: 'Interactive Knowledge Graph: Network Visualization for AI Industry Intelligence',
+          excerpt: 'Discover hidden connections in the AI ecosystem through force-directed network visualization with 237+ entities and 1,814 relationships.',
+          featuredImage: '/images/blog/graph.png',
+          author: 'Trenddit Advisory Team',
+          tags: ['Moments', 'Knowledge Graph', 'Network Analysis']
         },
         {
-          slug: 'lean-ai-stack-selection',
-          title: 'Lean AI Stack Selection: Choosing the Right Tools',
-          excerpt: 'A comprehensive guide to selecting AI-optimized technology stacks for rapid development.',
-          featuredImage: '/images/blog/first-sprint-generation.png',
-          author: 'Trenddit Team',
-          tags: ['ai', 'technology-stack', 'guide']
+          slug: 'moments-correlation-matrix-analytics',
+          title: 'Correlation Matrix Analytics: Quantifying AI Industry Relationships',
+          excerpt: 'Transform qualitative AI industry connections into precise quantitative insights through advanced correlation coefficients and statistical relationship measurement.',
+          featuredImage: '/images/blog/matrix.png',
+          author: 'Trenddit Advisory Team',
+          tags: ['Moments', 'Correlation Analysis', 'Analytics']
         },
         {
-          slug: 'enterprise-ai-development-workflows',
-          title: 'Enterprise AI Development Workflows',
-          excerpt: 'Best practices for implementing AI-driven development workflows in enterprise environments.',
-          featuredImage: '/images/blog/vibe-coding-workflows.png',
-          author: 'Trenddit Team',
-          tags: ['enterprise', 'ai', 'workflow']
+          slug: 'moments-factor-analytics-sunburst-visualization',
+          title: 'Factor Distribution Analytics: Advanced Sunburst Charts for AI Intelligence',
+          excerpt: 'Unlock hidden patterns in AI industry dynamics through multi-dimensional visualization combining interactive sunburst charts with correlation heatmaps.',
+          featuredImage: '/images/blog/dashboard-factors.png',
+          author: 'Trenddit Advisory Team',
+          tags: ['Moments', 'Factor Analysis', 'Data Visualization']
         },
         {
           slug: 'introducing-trenddit-memo-ai-browsing',

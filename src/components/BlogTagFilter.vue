@@ -54,6 +54,16 @@ onMounted(() => {
     'AI Intelligence',
     'Business Intelligence',
     'Multi-Agent Systems',
+    'Dashboard',
+    'Analytics',
+    'Knowledge Graph',
+    'Network Analysis',
+    'Correlation Analysis',
+    'Factor Analysis',
+    'Data Visualization',
+    'Sunburst Charts',
+    'Pattern Recognition',
+    'Statistical Analysis',
     'Enterprise Technology',
     'Enterprise Strategy',
     'AI Advisory',
@@ -65,7 +75,9 @@ onMounted(() => {
     'File System Architecture',
     'Market Research',
     'Competitive Analysis',
-    'Data Sovereignty'
+    'Data Sovereignty',
+    'Strategic Planning',
+    'Data Science'
   ]
   availableTags.value = classificationTags
 

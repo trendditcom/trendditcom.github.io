@@ -4,7 +4,7 @@
       <div class="mx-auto max-w-2xl text-center">
         <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Our Products</h2>
         <p class="mt-4 text-lg text-gray-600">
-          AI-powered business intelligence platform and tools for strategic decision-making and competitive advantage
+          Advanced analytics platform with three-tier dashboards, interactive knowledge graphs, and correlation intelligence for data-driven strategic decisions
         </p>
       </div>
       <div class="mx-auto mt-16 max-w-4xl space-y-8">
@@ -22,20 +22,20 @@
                 <span class="px-3 py-1 text-xs font-semibold text-blue-700 bg-blue-100 rounded-full">Flagship</span>
               </div>
               <p class="mt-2 text-gray-700 text-lg leading-relaxed">
-                AI-powered business intelligence application that transforms overwhelming AI industry information into strategic insights. Automatically discover, analyze, and connect pivotal moments across 100+ AI companies and enterprise disruption patterns using specialized AI agents and local-first architecture.
+                Advanced AI business intelligence platform featuring three-tier analytics dashboards, interactive knowledge graphs with 237+ entities, and intelligent correlation matrix analysis. Transform complex AI industry data into actionable insights with force-directed network visualization, statistical relationship measurement, and factor distribution analytics.
               </p>
               <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-600">
                 <div class="flex items-center gap-2">
                   <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-                  <span>Multi-Agent Processing</span>
+                  <span>Three-Tier Analytics Dashboard</span>
                 </div>
                 <div class="flex items-center gap-2">
                   <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
-                  <span>Smart Correlation Discovery</span>
+                  <span>Interactive Knowledge Graph</span>
                 </div>
                 <div class="flex items-center gap-2">
-                  <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-                  <span>Local-First Architecture</span>
+                  <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span>Correlation Matrix Analytics</span>
                 </div>
               </div>
               <div class="mt-6 flex gap-4">

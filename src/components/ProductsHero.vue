@@ -16,11 +16,11 @@
         <!-- Glassmorphism Card for Description -->
         <div class="backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl p-8 mb-8 shadow-2xl animate-slide-up max-w-4xl mx-auto">
           <p class="text-xl md:text-2xl text-white/90 leading-relaxed font-light mb-6">
-            AI-Powered Business Intelligence for Strategic Decision-Making
+            Advanced Analytics Dashboard with Knowledge Graph Intelligence
           </p>
           
           <p class="text-lg text-white/80 leading-relaxed font-light max-w-3xl mx-auto">
-            Transform overwhelming AI industry information into strategic insights with Moments. Automatically discover, analyze, and connect pivotal moments across 100+ AI companies using specialized AI agents and local-first architecture.
+            Experience three-tier analytics dashboards, interactive network visualization with 237+ entities, and intelligent correlation matrix analysis. Transform complex AI industry data into actionable strategic insights through force-directed knowledge graphs and advanced factor analytics.
           </p>
           
           <!-- Action Buttons -->
@@ -62,31 +62,31 @@
           <div class="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
             <div class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <svg class="w-6 h-6 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
               </svg>
             </div>
-            <h3 class="text-lg font-semibold text-white mb-2">Multi-Agent Processing</h3>
-            <p class="text-white/70 text-sm">Specialized AI agents for content analysis and correlation discovery</p>
+            <h3 class="text-lg font-semibold text-white mb-2">Three-Tier Analytics Dashboard</h3>
+            <p class="text-white/70 text-sm">Strategic, tactical, and operational views with real-time KPIs and intelligent insights</p>
           </div>
           
           <div class="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
             <div class="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <svg class="w-6 h-6 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c1.21 0 2.9.57 4 1.68C17.11 5.78 17.89 7.57 18 9h1l-1 5.5c-.1 1.43-.9 2.22-2 2.5l-1-.5c-1.1.28-1.9 1.07-2 2.5L12 19c-.1-1.43-.9-2.22-2-2.5l-1 .5c-1.1-.28-1.9-1.07-2-2.5L6 9h1c.11-1.43.89-3.22 2-4.32C10.1 3.57 11.79 3 13 3z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
               </svg>
             </div>
-            <h3 class="text-lg font-semibold text-white mb-2">Smart Correlation Discovery</h3>
-            <p class="text-white/70 text-sm">Automatically discover relationships between business events</p>
+            <h3 class="text-lg font-semibold text-white mb-2">Interactive Knowledge Graph</h3>
+            <p class="text-white/70 text-sm">Force-directed network visualization revealing hidden patterns across 1,814 relationships</p>
           </div>
           
           <div class="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
             <div class="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <svg class="w-6 h-6 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v1a1 1 0 001 1h4a1 1 0 001-1v-1m3-2V8a1 1 0 00-1-1H5a1 1 0 00-1 1v7m14 0h2m-2 0h-5m-9 0H2m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
               </svg>
             </div>
-            <h3 class="text-lg font-semibold text-white mb-2">Local-First Architecture</h3>
-            <p class="text-white/70 text-sm">Your data stays secure on your systems with complete privacy control</p>
+            <h3 class="text-lg font-semibold text-white mb-2">Correlation Matrix Analytics</h3>
+            <p class="text-white/70 text-sm">Quantitative relationship analysis with statistical coefficients and hierarchical clustering</p>
           </div>
         </div>
       </div>

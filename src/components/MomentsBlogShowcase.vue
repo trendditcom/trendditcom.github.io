@@ -8,7 +8,7 @@
             Moments Insights
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Advanced insights into AI-powered business intelligence, multi-agent systems, and strategic competitive intelligence workflows
+            Advanced insights into analytics dashboards, interactive knowledge graphs, correlation matrix intelligence, and strategic business intelligence workflows
           </p>
         </div>
       </div>
@@ -160,11 +160,17 @@ const loadMomentsPosts = async () => {
       })
     );
     
-    // Filter posts by Moments-related tags
+    // Filter posts by Moments-related tags including dashboard features
     const validPosts = loadedPosts.filter(post => 
       post !== null && 
       post.tags.some(tag => 
         tag.includes('Moments') ||
+        tag.includes('Dashboard') ||
+        tag.includes('Analytics') ||
+        tag.includes('Knowledge Graph') ||
+        tag.includes('Network Analysis') ||
+        tag.includes('Correlation Analysis') ||
+        tag.includes('Factor Analysis') ||
         tag.includes('AI Intelligence') ||
         tag.includes('Business Intelligence') ||
         tag.includes('Multi-Agent Systems') ||
@@ -194,28 +200,28 @@ const loadMomentsPosts = async () => {
     if (featuredPosts.value.length === 0) {
       featuredPosts.value = [
         {
-          slug: 'multi-agent-ai-systems-business-intelligence',
-          title: 'Multi-Agent AI Systems: Production-Grade Business Intelligence for Enterprise',
-          excerpt: 'Advanced techniques for building specialized AI agent architectures using Claude Sonnet 4, sophisticated prompt engineering, and hybrid classification systems to transform business content into actionable intelligence.',
-          featuredImage: '/images/blog/agents.png',
-          author: 'Trenddit Team',
-          tags: ['Moments', 'AI Intelligence', 'Business Intelligence']
+          slug: 'moments-dashboard-three-tier-analytics',
+          title: 'Moments Dashboard: Three-Tier Analytics for AI Business Intelligence',
+          excerpt: 'Transform AI industry data into strategic insights with Moments three-tier analytics dashboard featuring real-time KPIs, correlation intelligence, and factor analysis.',
+          featuredImage: '/images/blog/dashboard.png',
+          author: 'Trenddit Advisory Team',
+          tags: ['Moments', 'Dashboard', 'Analytics']
         },
         {
-          slug: 'ai-powered-business-intelligence-end-users',
-          title: 'AI-Powered Business Intelligence for Enterprise Decision-Makers',
-          excerpt: 'How Moments transforms overwhelming AI industry information into clear, actionable insights for business professionals, executives, and decision-makers seeking competitive advantage.',
-          featuredImage: '/images/blog/moments.png',
-          author: 'Trenddit Team',
-          tags: ['Moments', 'AI Intelligence', 'Executive Tools']
+          slug: 'moments-knowledge-graph-network-visualization',
+          title: 'Interactive Knowledge Graph: Network Visualization for AI Industry Intelligence',
+          excerpt: 'Discover hidden connections in the AI ecosystem through force-directed network visualization with 237+ entities and 1,814 relationships revealing strategic patterns.',
+          featuredImage: '/images/blog/graph.png',
+          author: 'Trenddit Advisory Team',
+          tags: ['Moments', 'Knowledge Graph', 'Network Analysis']
         },
         {
-          slug: 'moments-ai-intelligence-research-teams',
-          title: 'Moments: AI-Powered Business Intelligence for Research Teams',
-          excerpt: 'How advanced AI agents transform market research by automatically detecting and classifying pivotal moments across 100+ companies and enterprise disruption patterns, delivering 95% faster strategic insights.',
-          featuredImage: '/images/blog/moments.png',
-          author: 'Trenddit Team',
-          tags: ['Moments', 'Market Research', 'AI Intelligence']
+          slug: 'moments-correlation-matrix-analytics',
+          title: 'Correlation Matrix Analytics: Quantifying AI Industry Relationships',
+          excerpt: 'Transform qualitative AI industry connections into precise quantitative insights through advanced correlation coefficients and statistical relationship measurement.',
+          featuredImage: '/images/blog/matrix.png',
+          author: 'Trenddit Advisory Team',
+          tags: ['Moments', 'Correlation Analysis', 'Analytics']
         }
       ];
     }
@@ -225,12 +231,12 @@ const loadMomentsPosts = async () => {
     // Set fallback posts
     featuredPosts.value = [
       {
-        slug: 'multi-agent-ai-systems-business-intelligence',
-        title: 'Multi-Agent AI Systems: Production-Grade Business Intelligence for Enterprise',
-        excerpt: 'Advanced techniques for building specialized AI agent architectures using Claude Sonnet 4, sophisticated prompt engineering, and hybrid classification systems to transform business content into actionable intelligence.',
-        featuredImage: '/images/blog/agents.png',
-        author: 'Trenddit Team',
-        tags: ['Moments', 'AI Intelligence', 'Business Intelligence']
+        slug: 'moments-dashboard-three-tier-analytics',
+        title: 'Moments Dashboard: Three-Tier Analytics for AI Business Intelligence',
+        excerpt: 'Transform AI industry data into strategic insights with Moments three-tier analytics dashboard featuring real-time KPIs, correlation intelligence, and factor analysis.',
+        featuredImage: '/images/blog/dashboard.png',
+        author: 'Trenddit Advisory Team',
+        tags: ['Moments', 'Dashboard', 'Analytics']
       }
     ];
   }
